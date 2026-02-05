@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Walk In The Park"
+run/main_scene="uid://d05hcareuu2bv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Data="*uid://c6ivcesabovqi"
 
 [physics]
 

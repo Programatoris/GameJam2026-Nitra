@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dv3d4xc7iv0u7"]
+
+[ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenu.gd" id="1_nndrw"]
+[ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderPercentageText.gd" id="2_umfbs"]
+
+[node name="MainMenu" type="Control" unique_id=2121068006]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nndrw")
+
+[node name="MainMenu" type="VBoxContainer" parent="." unique_id=1252399401]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -68.0
+offset_right = 46.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainMenu" unique_id=1841660413]
+layout_mode = 2
+text = "Start"
+flat = true
+
+[node name="OptionsButton" type="Button" parent="MainMenu" unique_id=2111542389]
+layout_mode = 2
+text = "Options"
+flat = true
+
+[node name="Credits" type="Button" parent="MainMenu" unique_id=250115428]
+layout_mode = 2
+text = "Credits"
+flat = true
+
+[node name="QuitButton" type="Button" parent="MainMenu" unique_id=1522551495]
+layout_mode = 2
+text = "Quit Game"
+flat = true
+
+[node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=739651276]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -29.0
+offset_right = 88.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SliderSegment" type="HBoxContainer" parent="OptionsMenu" unique_id=1503562917]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/SliderSegment" unique_id=751948596]
+custom_minimum_size = Vector2(73.515, 48)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SliderWithPercentageText" type="VBoxContainer" parent="OptionsMenu/SliderSegment" unique_id=1090225291]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/SliderSegment/SliderWithPercentageText" unique_id=664618348]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/SliderSegment/SliderWithPercentageText" unique_id=203201751]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="SliderSegment2" type="HBoxContainer" parent="OptionsMenu" unique_id=1669842941]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/SliderSegment2" unique_id=1587818999]
+custom_minimum_size = Vector2(73.515, 48)
+layout_mode = 2
+text = "Effects"
+horizontal_alignment = 1
+
+[node name="SliderWithPercentageText" type="VBoxContainer" parent="OptionsMenu/SliderSegment2" unique_id=72016751]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/SliderSegment2/SliderWithPercentageText" unique_id=1681218560]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/SliderSegment2/SliderWithPercentageText" unique_id=62473463]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
