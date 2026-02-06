@@ -12,7 +12,14 @@ func _ready() -> void:
 	add_to_group("player")
 	sprite.play("default")
 
-
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	
+	velocity = Vector2.ZERO
+	$CollisionShape2D2.set_deferred("disabled", true)
+	sprite.play("death")
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -38,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		
 		sprite.flip_h = direction < 0
+	
 		
 		if sprite.animation != "pohyb":
 			pass

@@ -1,10 +1,27 @@
 [gd_scene format=3 uid="uid://dsm6i0hqw8jej"]
 
+[ext_resource type="Texture2D" uid="uid://dgoenxr1wxaoy" path="res://visuals/sprites/vlajka.png" id="2_cxoq5"]
 [ext_resource type="Script" uid="uid://t7cdowdqyncj" path="res://Scripts/player2.gd" id="2_ka5py"]
 [ext_resource type="Texture2D" uid="uid://dh8js2mdce5gi" path="res://visuals/sprites/tilemap_sprites2.png" id="3_cxoq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnre0"]
 radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7sbj"]
+atlas = ExtResource("2_cxoq5")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnre0"]
+atlas = ExtResource("2_cxoq5")
+region = Rect2(0, 48, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58iiq"]
+atlas = ExtResource("2_cxoq5")
+region = Rect2(16, 48, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05mry"]
+atlas = ExtResource("2_cxoq5")
+region = Rect2(32, 48, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecx76"]
 atlas = ExtResource("3_cxoq5")
@@ -20,6 +37,23 @@ region = Rect2(304, 112, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_58iiq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7sbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnre0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58iiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05mry")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ecx76")
@@ -48,4 +82,7 @@ shape = SubResource("CapsuleShape2D_qnre0")
 position = Vector2(-34.999996, 18)
 scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_58iiq")
+animation = &"death"
 autoplay = "default"
+frame = 3
+frame_progress = 0.9755941
