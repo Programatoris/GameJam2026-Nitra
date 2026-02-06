@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dh5qp1pfatk20"]
+
+[ext_resource type="Script" uid="uid://4ryuiyirxuir" path="res://Scripts/flipper.gd" id="1_34q2x"]
+[ext_resource type="Texture2D" uid="uid://c3gdpbx3tklrc" path="res://visuals/sprites/Sprite-0dd001.png" id="1_jggv8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34q2x"]
+radius = 8.0
+
+[node name="Flipper" type="Node2D" unique_id=308766981]
+script = ExtResource("1_34q2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676356578]
+texture = ExtResource("1_jggv8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=446051834]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1116825724]
+shape = SubResource("CircleShape2D_34q2x")

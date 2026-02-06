@@ -91,7 +91,7 @@ height = 32.0
 position = Vector2(9, -20)
 sprite_frames = SubResource("SpriteFrames_l5pkb")
 autoplay = "default"
-frame_progress = 0.11692067
+frame_progress = 0.18214576
 script = ExtResource("2_l5pkb")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1340175667]
