@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b1rpw831opcta" path="res://Scripts/Player.gd" id="2_bkgf5"]
 [ext_resource type="Texture2D" uid="uid://c01ev1edv7nm7" path="res://visuals/sprites/typek_smrt.png" id="2_pdiyv"]
 [ext_resource type="Texture2D" uid="uid://dlxfdr3fqkqjh" path="res://visuals/sprites/typek_pohyb.png" id="3_kl0bm"]
+[ext_resource type="AudioStream" uid="uid://djcfblvx6v0o7" path="res://Audio/SoundEffects/death.mp3" id="5_hrew7"]
+[ext_resource type="AudioStream" uid="uid://cbijo3547okxq" path="res://Audio/SoundEffects/jump.wav" id="6_s6v37"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkgf5"]
 radius = 3.0
@@ -198,3 +200,9 @@ scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_23xfg")
 animation = &"death_animation"
 autoplay = "default"
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=981537234]
+stream = ExtResource("5_hrew7")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=860697704]
+stream = ExtResource("6_s6v37")

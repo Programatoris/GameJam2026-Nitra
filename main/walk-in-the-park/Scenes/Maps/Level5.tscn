@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" path="res://Nodes/dog_attack.tscn" id="9_0l17q"]
 [ext_resource type="PackedScene" path="res://Nodes/Flying_circular.tscn" id="10_08orq"]
 [ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="11_v7mi8"]
+[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="12_piwmk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_piwmk"]
 texture = ExtResource("5_08orq")
@@ -310,6 +311,9 @@ position = Vector2(-40, 136)
 
 [node name="DogAttack" parent="." unique_id=2036478531 instance=ExtResource("9_0l17q")]
 position = Vector2(299, 200)
+
+[node name="DogBark" type="AudioStreamPlayer" parent="DogAttack" unique_id=266157850]
+stream = ExtResource("12_piwmk")
 
 [node name="FlyingCircular" parent="." unique_id=415998185 instance=ExtResource("10_08orq")]
 position = Vector2(96, 224)

@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var detection_area: Area2D = $DetectionArea
 @onready var kill_area: Area2D = $KillArea
+@onready var stone_slide: AudioStreamPlayer = $StoneSlide
+
 
 var triggered := false
 var is_falling := false
@@ -39,6 +41,7 @@ func _process(delta: float) -> void:
 
 func _on_detection_entered(body: Node) -> void:
 	if body.is_in_group("player"):
+		stone_slide.play()
 		player = body
 
 func _on_detection_exited(body: Node) -> void:

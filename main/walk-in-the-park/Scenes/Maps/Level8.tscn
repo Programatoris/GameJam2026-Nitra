@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_hbeb3"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_qakxs"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="6_urh57"]
+[ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="7_urh57"]
 [ext_resource type="PackedScene" uid="uid://okvpcu3xhtyt" path="res://Nodes/JumpBoost.tscn" id="8_yfk0h"]
 [ext_resource type="PackedScene" path="res://Nodes/Flying_circular.tscn" id="9_w5nj7"]
 [ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="10_m2ypr"]
@@ -232,6 +233,9 @@ position = Vector2(-263, -88)
 [node name="FlyingSpikeLeft4" parent="TextureRect/Sky" unique_id=1502386981 instance=ExtResource("11_5yapc")]
 position = Vector2(376, 42)
 
+[node name="StoneSlide" type="AudioStreamPlayer" parent="TextureRect/Sky/FlyingSpikeLeft4" unique_id=414413521 groups=["Effects"]]
+stream = ExtResource("7_urh57")
+
 [node name="Bcloud" type="Sprite2D" parent="TextureRect" unique_id=623566035]
 position = Vector2(-207, 77)
 texture = ExtResource("2_2ouob")
@@ -334,14 +338,26 @@ position = Vector2(82, -21)
 [node name="FlyingSpikeLeft" parent="." unique_id=384813236 instance=ExtResource("11_5yapc")]
 position = Vector2(375, 119)
 
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft" unique_id=1964938213 groups=["Effects"]]
+stream = ExtResource("7_urh57")
+
 [node name="FlyingSpikeLeft2" parent="." unique_id=1889040906 instance=ExtResource("11_5yapc")]
 position = Vector2(376, 98)
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft2" unique_id=2102455510 groups=["Effects"]]
+stream = ExtResource("7_urh57")
 
 [node name="FlyingSpikeLeft3" parent="." unique_id=1266264594 instance=ExtResource("11_5yapc")]
 position = Vector2(376, 68)
 
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft3" unique_id=1607170560 groups=["Effects"]]
+stream = ExtResource("7_urh57")
+
 [node name="FlyingSpikeLeft4" parent="." unique_id=2049980302 instance=ExtResource("11_5yapc")]
 position = Vector2(376, 42)
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft4" unique_id=877981461 groups=["Effects"]]
+stream = ExtResource("7_urh57")
 
 [node name="SpikeUpside" parent="." unique_id=887213582 instance=ExtResource("3_2ouob")]
 position = Vector2(-263, -88)
@@ -418,8 +434,14 @@ position = Vector2(-40, -88)
 [node name="FlyingSpikeLeft5" parent="." unique_id=2136088838 instance=ExtResource("11_5yapc")]
 position = Vector2(378, -11)
 
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft5" unique_id=786134243 groups=["Effects"]]
+stream = ExtResource("7_urh57")
+
 [node name="FlyingSpikeLeft6" parent="." unique_id=398136050 instance=ExtResource("11_5yapc")]
 position = Vector2(377, -4)
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft6" unique_id=1447047504 groups=["Effects"]]
+stream = ExtResource("7_urh57")
 
 [node name="SpikeUpside25" parent="." unique_id=905838180 instance=ExtResource("3_2ouob")]
 position = Vector2(188, -88)

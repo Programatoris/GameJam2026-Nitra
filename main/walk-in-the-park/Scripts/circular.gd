@@ -22,5 +22,5 @@ func _on_body_entered(body: Node) -> void:
 		reset_level()
 
 func reset_level() -> void:
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1).timeout
 	get_tree().reload_current_scene()

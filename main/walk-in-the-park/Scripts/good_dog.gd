@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var detection_area: Area2D = $Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dog_bark: AudioStreamPlayer = $DogBark
 
 var triggered := false
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	# Ak do oblasti vojde objekt zo skupiny "player"
 	if body.is_in_group("player"):
+		dog_bark.play()
 		# Spustíme animáciu (ak ešte nebeží alebo ak ju chceš reštartovať)
 		if sprite.sprite_frames.has_animation("default"):
 			sprite.play("default")

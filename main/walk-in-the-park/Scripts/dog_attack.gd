@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var detection_area: Area2D = $DetectionArea
 @onready var kill_area: Area2D = $KillArea
+@onready var dog_bark: AudioStreamPlayer = $DogBark
 
 var triggered := false
 var is_falling := false
@@ -40,16 +41,20 @@ func _process(delta: float) -> void:
 func _on_detection_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player = body
+		dog_bark.play()
 
 func _on_detection_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		player = null
+		dog_bark.play()
 
 func _on_kill_entered(body: Node) -> void:
 	# Only kill if falling
 	if is_falling and body.is_in_group("player"):
 		if body.has_method("die"):
 			body.die()
+			dog_bark.play()
+			await get_tree().create_timer(1).timeout
 		reset_level()
 
 func start_falling() -> void:

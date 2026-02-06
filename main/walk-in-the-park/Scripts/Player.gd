@@ -7,6 +7,11 @@ const JUMP_VELOCITY = -225.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+@onready var death: AudioStreamPlayer = $Death
+@onready var jump: AudioStreamPlayer = $Jump
+
+
+
 var is_dead := false
 var can_double_jump := false
 var is_flipped := false
@@ -50,8 +55,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var jump_dir = 1 if is_flipped else -1
 		if is_on_floor():
+			jump.play()
 			velocity.y = abs(JUMP_VELOCITY) * jump_dir
 		elif can_double_jump:
+			jump.play()
 			velocity.y = abs(JUMP_VELOCITY - 100) * jump_dir
 			can_double_jump = false
 	
@@ -72,6 +79,7 @@ func _physics_process(delta: float) -> void:
 # PODSTATNÉ PRE LÚČ: Upravená funkcia smrti a resetu
 func die():
 	if is_dead: return
+	death.play()
 	is_dead = true
 	velocity = Vector2.ZERO
 	sprite.play("death_animation")

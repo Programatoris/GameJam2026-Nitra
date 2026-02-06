@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://e717055ubqjm" path="res://visuals/sprites/adadad.png" id="12_qlp5c"]
 [ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeUp.tscn" id="13_elpaq"]
 [ext_resource type="PackedScene" path="res://Nodes/sunbeam.tscn" id="13_kp0ta"]
+[ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="15_irslr"]
 [ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="15_nnda4"]
 [ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="16_nnda4"]
 [ext_resource type="PackedScene" path="res://Nodes/Circular.tscn" id="16_vx22f"]
@@ -331,6 +332,9 @@ position = Vector2(295, 112)
 
 [node name="FlyingSpikeUp" parent="." unique_id=1393011176 instance=ExtResource("13_elpaq")]
 position = Vector2(88, 200)
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeUp" unique_id=1638156684 groups=["Effects"]]
+stream = ExtResource("15_irslr")
 
 [node name="JumpBoost" parent="." unique_id=1379882480 instance=ExtResource("8_w2i42")]
 position = Vector2(-141, 229)
