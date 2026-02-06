@@ -27,8 +27,27 @@ func run_away() -> void:
 	# Smoothly move 400 pixels to the left over 0.5 seconds
 	tween.tween_property(self, "position:x", position.x - 550, 0.5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "position:y", position.y + 32, 0.5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
-	
+	spawn_spike()
 	print("The flag escaped!")
+
+
+
+
+func spawn_spike() -> void:
+	# Načítame scénu FlyingSpikeUp
+	var spike_scene = load("res://Nodes/FlyingSpikeUp.tscn") # Skontroluj, či je koncovka .tscn správna
+	if spike_scene:
+		var spike = spike_scene.instantiate()
+		
+		# Nastavíme pozíciu (globálnu, aby sa nespawnovala relatívne k vlajke)
+		spike.position = Vector2(-24, 232)
+		
+		# Pridáme spajk do scény (najlepšie k ostatným objektom v leveli)
+		get_tree().current_scene.add_child(spike)
+		print("Pasca FlyingSpikeUp bola vytvorená!")
+	else:
+		print("Nepodarilo sa nájsť scénu na res://Nodes/FlyingSpikeUp.tscn")
+
 
 func change_scene() -> void:
 	var current_scene = get_tree().current_scene
