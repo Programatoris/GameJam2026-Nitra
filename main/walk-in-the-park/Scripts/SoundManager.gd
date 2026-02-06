@@ -19,16 +19,16 @@ func _process(delta: float) -> void:
 	pass
 
 
-func musicGroup(_percent: int) -> void:
-	var volume_db = convertPercentToDecibels(_percent)
+func musicGroup() -> void:
+	var volume_db = convertPercentToDecibels(Data.data["settings"]["Music"])
 	
 	for node in get_tree().get_nodes_in_group("Music"):
 		if node is AudioStreamPlayer or node is AudioStreamPlayer2D or node is AudioStreamPlayer3D:
 			node.volume_db = volume_db
 
 
-func effectsGroups(_percent: int) -> void:
-	var volume_db = convertPercentToDecibels(_percent)
+func effectsGroups() -> void:
+	var volume_db = convertPercentToDecibels(Data.data["settings"]["Effects"])
 	
 	for node in get_tree().get_nodes_in_group("Effects"):
 		if node is AudioStreamPlayer or node is AudioStreamPlayer2D or node is AudioStreamPlayer3D:
