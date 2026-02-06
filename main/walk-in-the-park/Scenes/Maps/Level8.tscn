@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://bjb7xlovhvxvx"]
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_5yapc"]
+[ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_qakxs"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_2ouob"]
-[ext_resource type="PackedScene" uid="uid://lrsebkxyd3ni" path="res://Nodes/spike upside.tscn" id="3_2ouob"]
+[ext_resource type="AudioStream" uid="uid://deqmw5yov1kbs" path="res://Audio/Music/tutorial.wav" id="2_urh57"]
+[ext_resource type="PackedScene" path="res://Nodes/spike upside.tscn" id="3_2ouob"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_vvfap"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_hbeb3"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_qakxs"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="6_urh57"]
 [ext_resource type="PackedScene" uid="uid://okvpcu3xhtyt" path="res://Nodes/JumpBoost.tscn" id="8_yfk0h"]
-[ext_resource type="PackedScene" uid="uid://xdvd3hugq3ox" path="res://Nodes/Flying_circular.tscn" id="9_w5nj7"]
-[ext_resource type="PackedScene" uid="uid://ddqh1rxng8o8a" path="res://Nodes/Flag.tscn" id="10_m2ypr"]
-[ext_resource type="PackedScene" uid="uid://jbipmbvle5rj" path="res://Nodes/FlyingSpikeLeft.tscn" id="11_5yapc"]
-[ext_resource type="PackedScene" uid="uid://dh5qp1pfatk20" path="res://Nodes/Flipper.tscn" id="12_2ouob"]
-[ext_resource type="PackedScene" uid="uid://i6i2my4j8gra" path="res://Nodes/platformmoving.tscn" id="13_vvfap"]
+[ext_resource type="PackedScene" path="res://Nodes/Flying_circular.tscn" id="9_w5nj7"]
+[ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="10_m2ypr"]
+[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeLeft.tscn" id="11_5yapc"]
+[ext_resource type="PackedScene" path="res://Nodes/Flipper.tscn" id="12_2ouob"]
+[ext_resource type="PackedScene" path="res://Nodes/platformmoving.tscn" id="13_vvfap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smtcc"]
 texture = ExtResource("5_qakxs")
@@ -199,6 +201,18 @@ texture = ExtResource("5_qakxs")
 sources/0 = SubResource("TileSetAtlasSource_g5c7u")
 
 [node name="Level8" type="Node2D" unique_id=1345517675]
+
+[node name="PauseMenu" parent="." unique_id=1752692991 instance=ExtResource("1_qakxs")]
+visible = false
+z_index = 10
+offset_left = 44.41
+offset_top = 73.53
+offset_right = 44.41
+offset_bottom = 73.53
+
+[node name="Tutorial" type="AudioStreamPlayer" parent="." unique_id=834353626 groups=["Music"]]
+stream = ExtResource("2_urh57")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=27905636]
 offset_right = 40.0

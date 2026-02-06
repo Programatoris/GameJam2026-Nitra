@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_qgaky"]
 [ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_u3f6s"]
+[ext_resource type="AudioStream" uid="uid://v3pffgrsfoe6" path="res://Audio/Music/pianoSomething.wav" id="2_l72yf"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_ynbod"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_83ky4"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_u3f6s"]
@@ -209,6 +210,10 @@ offset_left = 44.41
 offset_top = 73.53
 offset_right = 44.41
 offset_bottom = 73.53
+
+[node name="PianoSomething" type="AudioStreamPlayer" parent="." unique_id=267018368 groups=["Music"]]
+stream = ExtResource("2_l72yf")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1311658386]
 offset_right = 40.0
