@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bk401vgiho2jy"]
 
+[ext_resource type="Script" uid="uid://dpcc225f7q5ly" path="res://Scripts/circular.gd" id="1_dsltr"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_tat02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsltr"]
@@ -42,14 +43,15 @@ animations = [{
 radius = 15.0
 
 [node name="Circular" type="Node2D" unique_id=1885371468]
+script = ExtResource("1_dsltr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=377104399]
 sprite_frames = SubResource("SpriteFrames_akuk3")
 autoplay = "default"
 frame_progress = 0.82843345
 
-[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=1911551801]
+[node name="Area2D" type="Area2D" parent="." unique_id=460202774]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D" unique_id=661341705]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=661341705]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_tat02")

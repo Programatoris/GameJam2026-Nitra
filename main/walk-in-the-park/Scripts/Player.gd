@@ -1,15 +1,29 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -275.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -225.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+var is_dead := false
 
 func _ready() -> void:
 	add_to_group("player")
-	sprite.play("idle")
+	sprite.play("default")
+
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	
+	velocity = Vector2.ZERO
+	$CollisionShape2D.disabled = true
+	sprite.play("death_animation")
 
 func _physics_process(delta: float) -> void:
+	# Don't process movement if dead
+	if is_dead:
+		return
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta

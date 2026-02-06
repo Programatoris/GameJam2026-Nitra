@@ -198,5 +198,3 @@ scale = Vector2(0.96875, 1)
 sprite_frames = SubResource("SpriteFrames_23xfg")
 animation = &"death_animation"
 autoplay = "default"
-frame = 2
-frame_progress = 1.0

@@ -17,3 +17,11 @@ func _on_body_entered(body: Node2D) -> void:
 
 func change_scene() -> void:
 	get_tree().change_scene_to_file(next_level_path)
+	var temp = Data.level_data_preset
+	
+	var level = 1
+	temp["level"] = 1
+	temp["attemps"] = 1
+	temp["time"] = 1
+	Data.data["level_data"][level- 1] = temp
+	Data.saveData()

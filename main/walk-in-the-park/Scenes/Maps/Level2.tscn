@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="6_oydv1"]
 [ext_resource type="PackedScene" uid="uid://ddqh1rxng8o8a" path="res://Nodes/Flag.tscn" id="7_6w05j"]
 [ext_resource type="PackedScene" uid="uid://bk401vgiho2jy" path="res://Nodes/Circular.tscn" id="8_vt3u1"]
+[ext_resource type="PackedScene" uid="uid://i1eu363tsh50" path="res://Nodes/Apple.tscn" id="8_xf0vw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqt4u"]
 texture = ExtResource("5_e12id")
@@ -269,10 +270,7 @@ layer_0/tile_data = PackedInt32Array(1048559, 196609, 5, 1048560, 393217, 5, 104
 [node name="dodatok lilemap" type="TileMap" parent="." unique_id=646426557]
 tile_set = SubResource("TileSet_acj8e")
 format = 2
-layer_0/tile_data = PackedInt32Array(720911, 983040, 2, 655373, 983040, 2, 655374, 983040, 2, 720908, 983040, 2, 851957, 851968, 3, 786422, 851968, 3, 851956, 851968, 3)
-
-[node name="CharacterBody2D" parent="." unique_id=1640583849 instance=ExtResource("6_oydv1")]
-position = Vector2(-261, 216)
+layer_0/tile_data = PackedInt32Array(720911, 983040, 2, 655373, 983040, 2, 655374, 983040, 2, 720908, 983040, 2, 851957, 851968, 3, 851956, 851968, 3)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1591628594]
 position = Vector2(48, 73)
@@ -287,3 +285,9 @@ position = Vector2(144, 201)
 
 [node name="Circular2" parent="." unique_id=714653676 instance=ExtResource("8_vt3u1")]
 position = Vector2(224, 200)
+
+[node name="Apple" parent="." unique_id=1593050298 instance=ExtResource("8_xf0vw")]
+position = Vector2(-152, 190)
+
+[node name="CharacterBody2D" parent="." unique_id=1640583849 instance=ExtResource("6_oydv1")]
+position = Vector2(-261, 216)
