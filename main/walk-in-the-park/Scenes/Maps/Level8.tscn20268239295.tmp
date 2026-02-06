@@ -577,7 +577,7 @@ position = Vector2(348, -88)
 position = Vector2(376, -88)
 
 [node name="MovingPlatform" type="Node2D" parent="." unique_id=459737210]
-position = Vector2(199, 2)
+position = Vector2(-14.41, -8.165)
 script = ExtResource("13_hbeb3")
 
 [node name="TileMap2" type="TileMap" parent="MovingPlatform" unique_id=1518039364]
