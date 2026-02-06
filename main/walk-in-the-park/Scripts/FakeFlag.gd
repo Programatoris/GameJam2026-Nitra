@@ -34,20 +34,23 @@ func run_away() -> void:
 
 
 func spawn_spike() -> void:
-	# Načítame scénu FlyingSpikeUp
-	var spike_scene = load("res://Nodes/FlyingSpikeUp.tscn") # Skontroluj, či je koncovka .tscn správna
+	# Získame názov aktuálnej scény
+	var current_scene_name = get_tree().current_scene.name
+	
+	# Skontrolujeme, či sme v Level3
+	if current_scene_name != "Level3":
+		print("Tu sa spike nespawnuje, sme v: " + current_scene_name)
+		return # Ukončí funkciu a nič nespawne
+
+	# Zvyšok kódu zostáva rovnaký
+	var spike_scene = load("res://Nodes/FlyingSpikeUp.tscn")
 	if spike_scene:
 		var spike = spike_scene.instantiate()
-		
-		# Nastavíme pozíciu (globálnu, aby sa nespawnovala relatívne k vlajke)
 		spike.position = Vector2(-24, 232)
-		
-		# Pridáme spajk do scény (najlepšie k ostatným objektom v leveli)
 		get_tree().current_scene.add_child(spike)
-		print("Pasca FlyingSpikeUp bola vytvorená!")
+		print("Pasca FlyingSpikeUp bola vytvorená v Level3!")
 	else:
 		print("Nepodarilo sa nájsť scénu na res://Nodes/FlyingSpikeUp.tscn")
-
 
 func change_scene() -> void:
 	var current_scene = get_tree().current_scene
