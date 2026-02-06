@@ -11,6 +11,11 @@ extends HSlider
 # Functions
 func _ready() -> void:
 	setValues()
+	var slider_name_tag_text: String = parseAndConstructText(slider_name_tag.text)
+	if slider_name_tag_text == "Music":
+		SoundManager.musicGroup()
+	else:
+		SoundManager.effectsGroups()
 	handleSignals()
 
 
@@ -23,6 +28,11 @@ func on_h_slider_value_changed(_value):
 	var slider_name_tag_text: String = parseAndConstructText(slider_name_tag.text)
 	Data.data["settings"][slider_name_tag_text] = value
 	Data.saveData()
+	
+	if slider_name_tag_text == "Music":
+		SoundManager.musicGroup()
+	else:
+		SoundManager.effectsGroups()
 
 
 #==================================================
