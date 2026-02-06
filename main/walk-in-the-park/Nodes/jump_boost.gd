@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var detection_area: Area2D = $Area2D
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 var is_active := true
 
