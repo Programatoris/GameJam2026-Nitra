@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://i6i2my4j8gra"]
+
+[ext_resource type="Texture2D" uid="uid://dh8js2mdce5gi" path="res://visuals/sprites/tilemap_sprites2.png" id="1_1tekc"]
+[ext_resource type="Script" uid="uid://drr13p4uybww" path="res://Nodes/animated_sprite_2d.gd" id="2_08jna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2hm"]
+size = Vector2(34, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08jna"]
+atlas = ExtResource("1_1tekc")
+region = Rect2(240, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxsfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08jna")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Platformmoving" type="Node2D" unique_id=1141870980]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1044459014]
+script = ExtResource("2_08jna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=27503917]
+position = Vector2(9, 6.5)
+shape = SubResource("RectangleShape2D_ma2hm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=467960271]
+position = Vector2(9, 0)
+scale = Vector2(2.125, 1)
+sprite_frames = SubResource("SpriteFrames_cxsfa")

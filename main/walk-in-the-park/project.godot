@@ -11,8 +11,28 @@ config_version=5
 [application]
 
 config/name="Walk In The Park"
+run/main_scene="uid://d05hcareuu2bv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://d05hcareuu2bv"
+
+[autoload]
+
+Data="*uid://c6ivcesabovqi"
+SoundManager="*uid://chjpsxabl17q1"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+window/stretch/scale=0.5
+
+[global_group]
+
+Music=""
+Effects=""
+UI=""
 
 [physics]
 
@@ -20,4 +40,5 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

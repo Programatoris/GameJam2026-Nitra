@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d05hcareuu2bv"]
+
+[ext_resource type="PackedScene" uid="uid://dv3d4xc7iv0u7" path="res://Nodes/MainMenu.tscn" id="1_r150o"]
+[ext_resource type="AudioStream" uid="uid://dpowh0ujchu0o" path="res://Audio/Music/mainMenu.mp3" id="2_idj7w"]
+
+[node name="Main" type="Node" unique_id=2017952331]
+
+[node name="MainMenu" parent="." unique_id=2121068006 instance=ExtResource("1_r150o")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuSound" type="AudioStreamPlayer" parent="." unique_id=401064013 groups=["Music"]]
+stream = ExtResource("2_idj7w")
+autoplay = true

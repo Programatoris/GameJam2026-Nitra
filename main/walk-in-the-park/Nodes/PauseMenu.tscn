@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://c6ni35cqm24jt"]
+
+[ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenuManager.gd" id="1_h13p5"]
+[ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderText.gd" id="2_8xdnx"]
+[ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_rfcqb"]
+[ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="2_tjwai"]
+[ext_resource type="Texture2D" uid="uid://dom26gvpvreoc" path="res://visuals/buttonsUI/unpauseButton.png" id="3_5qaah"]
+[ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="3_tjwai"]
+[ext_resource type="Texture2D" uid="uid://dusxswlc715r8" path="res://visuals/buttonsUI/optionsButton.png" id="6_usl0m"]
+[ext_resource type="Texture2D" uid="uid://8j3kikbfgc8r" path="res://visuals/buttonsUI/menuButton.png" id="7_o7kyf"]
+
+[node name="PauseMenu" type="Control" unique_id=1752692991 groups=["UI"]]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_h13p5")
+
+[node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=1352842671 groups=["Effects"]]
+stream = ExtResource("2_tjwai")
+
+[node name="MainMenu" type="VBoxContainer" parent="." unique_id=1941099711 groups=["UI"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -68.0
+offset_right = 46.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UnpauseButton" type="Button" parent="MainMenu" unique_id=1425308508]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+icon = ExtResource("3_5qaah")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/UnpauseButton" unique_id=1409470840 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
+
+[node name="OptionsButton" type="Button" parent="MainMenu" unique_id=758669265]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+icon = ExtResource("6_usl0m")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/OptionsButton" unique_id=962107485 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
+
+[node name="BackToMainMenu" type="Button" parent="MainMenu" unique_id=2082036615]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+icon = ExtResource("7_o7kyf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/BackToMainMenu" unique_id=1003276780 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
+
+[node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=778167554 groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.5
+offset_top = -238.5
+offset_right = 214.5
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsMenu" unique_id=2123984758]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=810957937]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider" unique_id=2111125807]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/MusicSlider" unique_id=379874245]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=175346358]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+script = ExtResource("2_8xdnx")
+
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=2115682699]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
+horizontal_alignment = 1
+
+[node name="EffectsSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1115328729]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider" unique_id=1709668817]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Effects"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/EffectsSlider" unique_id=914317646]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=463700714]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+script = ExtResource("2_8xdnx")
+
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=1283067117]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
+horizontal_alignment = 1
+
+[node name="UiScaleSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=225002873]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider" unique_id=410117840]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 95)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "UI Scale"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/UiScaleSlider" unique_id=864168764]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=74071601]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.5
+value = 1.0
+script = ExtResource("2_8xdnx")
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=1679313380]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
+horizontal_alignment = 1
+
+[node name="UiScaleSlider2" type="HBoxContainer" parent="OptionsMenu" unique_id=1804215592]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OptionsMenu/UiScaleSlider2" unique_id=2145414736]
+custom_minimum_size = Vector2(525, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "FULLSCREEN"
+flat = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="OptionsMenu/UiScaleSlider2/Button" unique_id=1546149279 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1530131353]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="." unique_id=2125985888]
+z_index = -5
+layout_mode = 0
+offset_left = -932.0
+offset_top = -537.0
+offset_right = 938.0
+offset_bottom = 567.0
+scale = Vector2(1.0012078, 1)
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[connection signal="pressed" from="MainMenu/UnpauseButton" to="." method="_on_unpause_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="value_changed" from="OptionsMenu/UiScaleSlider/SliderWithText/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/UiScaleSlider2/Button" to="." method="_on_button_pressed"]

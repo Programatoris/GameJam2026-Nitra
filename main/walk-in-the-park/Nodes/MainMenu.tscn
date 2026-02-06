@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://dv3d4xc7iv0u7"]
+
+[ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenuManager.gd" id="1_nndrw"]
+[ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_cdxh8"]
+[ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="2_hqlno"]
+[ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="2_m8gkc"]
+[ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderText.gd" id="2_umfbs"]
+[ext_resource type="Texture2D" uid="uid://buu0oxd2ni3lm" path="res://visuals/buttonsUI/playButton.png" id="3_s3op2"]
+[ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="5_iatbl"]
+[ext_resource type="Texture2D" uid="uid://dusxswlc715r8" path="res://visuals/buttonsUI/optionsButton.png" id="6_epcuq"]
+[ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="6_lpxei"]
+[ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="7_ejtdc"]
+[ext_resource type="Texture2D" uid="uid://da3hta648tah0" path="res://visuals/buttonsUI/quitButton.png" id="7_er4fo"]
+[ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="8_5e6ic"]
+[ext_resource type="Texture2D" uid="uid://cp17r1g606au5" path="res://visuals/sprites/typek.png" id="10_ejtdc"]
+[ext_resource type="PackedScene" uid="uid://cwbgtq7fq1lm2" path="res://Nodes/good_dog.tscn" id="11_5e6ic"]
+
+[node name="MainMenu" type="Control" unique_id=2121068006 groups=["UI"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nndrw")
+
+[node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=1879328746 groups=["Effects"]]
+stream = ExtResource("2_hqlno")
+
+[node name="MainMenu" type="VBoxContainer" parent="." unique_id=122829806]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -154.0
+offset_right = 150.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainMenu" unique_id=1696542414]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+icon = ExtResource("3_s3op2")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/StartButton" unique_id=455983565 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
+
+[node name="OptionsButton" type="Button" parent="MainMenu" unique_id=3090276]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+icon = ExtResource("6_epcuq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/OptionsButton" unique_id=1339360230 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
+
+[node name="QuitButton" type="Button" parent="MainMenu" unique_id=1641273468]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+icon = ExtResource("7_er4fo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/QuitButton" unique_id=111649795 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1351136279]
+z_index = -1345
+layout_mode = 0
+offset_left = -150.0
+offset_top = -400.0
+offset_right = -115.54
+offset_bottom = -360.0
+scale = Vector2(5, 5)
+
+[node name="Sky" type="Sprite2D" parent="TextureRect" unique_id=1577718858]
+position = Vector2(564, 229)
+scale = Vector2(6.515625, 2.6249998)
+texture = ExtResource("5_iatbl")
+
+[node name="Bcloud" type="Sprite2D" parent="TextureRect" unique_id=1666279219]
+position = Vector2(-207, 77)
+texture = ExtResource("6_lpxei")
+
+[node name="Bcloud2" type="Sprite2D" parent="TextureRect" unique_id=1303856561]
+position = Vector2(-83, 79)
+texture = ExtResource("6_lpxei")
+
+[node name="Bcloud3" type="Sprite2D" parent="TextureRect" unique_id=311322243]
+position = Vector2(169, 71)
+texture = ExtResource("6_lpxei")
+
+[node name="Bcloud4" type="Sprite2D" parent="TextureRect" unique_id=1935694546]
+position = Vector2(44, 73)
+texture = ExtResource("6_lpxei")
+
+[node name="Bcloud5" type="Sprite2D" parent="TextureRect" unique_id=1688852578]
+position = Vector2(295, 66)
+texture = ExtResource("6_lpxei")
+
+[node name="Fcloud" type="Sprite2D" parent="TextureRect" unique_id=933586479]
+position = Vector2(-199, 91)
+texture = ExtResource("7_ejtdc")
+
+[node name="Fcloud2" type="Sprite2D" parent="TextureRect" unique_id=1748233709]
+position = Vector2(-58, 85)
+texture = ExtResource("7_ejtdc")
+
+[node name="Fcloud4" type="Sprite2D" parent="TextureRect" unique_id=993688869]
+position = Vector2(226, 86)
+texture = ExtResource("7_ejtdc")
+
+[node name="Fcloud3" type="Sprite2D" parent="TextureRect" unique_id=1719106019]
+position = Vector2(85, 84)
+texture = ExtResource("7_ejtdc")
+
+[node name="Fcloud5" type="Sprite2D" parent="TextureRect" unique_id=1990422438]
+position = Vector2(362, 84)
+texture = ExtResource("7_ejtdc")
+
+[node name="city" type="Sprite2D" parent="TextureRect" unique_id=749257787]
+position = Vector2(-191, 123)
+texture = ExtResource("8_5e6ic")
+
+[node name="city2" type="Sprite2D" parent="TextureRect" unique_id=1294507773]
+position = Vector2(-31, 128)
+texture = ExtResource("8_5e6ic")
+
+[node name="city4" type="Sprite2D" parent="TextureRect" unique_id=658580277]
+position = Vector2(289, 129)
+texture = ExtResource("8_5e6ic")
+
+[node name="city3" type="Sprite2D" parent="TextureRect" unique_id=1972490288]
+position = Vector2(129, 128)
+texture = ExtResource("8_5e6ic")
+
+[node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=1388395060]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.5
+offset_top = -238.5
+offset_right = 214.5
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsMenu" unique_id=275072153]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1571931440]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider" unique_id=1941286869]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/MusicSlider" unique_id=501067667]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=1107230743]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=216995007]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "100%"
+horizontal_alignment = 1
+
+[node name="EffectsSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=69219759]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider" unique_id=753699727]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Effects"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/EffectsSlider" unique_id=589556287]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=427257177]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=1773546528]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "100%"
+horizontal_alignment = 1
+
+[node name="UiScaleSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=4960430]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider" unique_id=442275522]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "UI Scale"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/UiScaleSlider" unique_id=1561979369]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=1655319428]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.5
+value = 1.0
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=1280392018]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "100%"
+horizontal_alignment = 1
+
+[node name="UiScaleSlider2" type="HBoxContainer" parent="OptionsMenu" unique_id=940962686]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OptionsMenu/UiScaleSlider2" unique_id=2143564110]
+custom_minimum_size = Vector2(525, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "FULLSCREEN"
+flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="OptionsMenu/UiScaleSlider2/Button" unique_id=372337235 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
+
+[node name="Typek" type="Sprite2D" parent="." unique_id=1884967523]
+position = Vector2(-854.00006, -1)
+scale = Vector2(22.578125, 22.578125)
+texture = ExtResource("10_ejtdc")
+
+[node name="GoodDog" parent="." unique_id=100526955 instance=ExtResource("11_5e6ic")]
+z_index = 102
+position = Vector2(954.99994, 219)
+scale = Vector2(18.216, 18.216)
+
+[connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsMenu/UiScaleSlider/SliderWithText/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/UiScaleSlider2/Button" to="." method="_on_button_pressed"]

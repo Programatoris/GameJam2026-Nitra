@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://okvpcu3xhtyt"]
+
+[ext_resource type="Texture2D" uid="uid://1hyqsvxmo7r5" path="res://visuals/sprites/Sprite-0001.png" id="1_bkto2"]
+[ext_resource type="Script" uid="uid://fl1m72cgujge" path="res://Nodes/jump_boost.gd" id="1_qg8ja"]
+[ext_resource type="AudioStream" uid="uid://bfmvqqo1qk4oo" path="res://Audio/SoundEffects/collisionThump.wav" id="3_rg861"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qg8ja"]
+radius = 9.0
+
+[node name="JumpBoost" type="Node2D" unique_id=1379882480]
+script = ExtResource("1_qg8ja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829460109]
+texture = ExtResource("1_bkto2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=331274449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1544627728]
+shape = SubResource("CircleShape2D_qg8ja")
+
+[node name="CollisionThump" type="AudioStreamPlayer" parent="." unique_id=219215747 groups=["Effects"]]
+stream = ExtResource("3_rg861")
+volume_db = 24.0

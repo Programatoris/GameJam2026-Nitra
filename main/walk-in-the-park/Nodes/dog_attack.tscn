@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dhdn2ymq0gowr"]
+
+[ext_resource type="Script" uid="uid://d3bi4bpau6vxu" path="res://Scripts/dog_attack.gd" id="1_lt00h"]
+[ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="2_w6wd4"]
+[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="3_w6wd4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubgce"]
+atlas = ExtResource("2_w6wd4")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8baw"]
+atlas = ExtResource("2_w6wd4")
+region = Rect2(160, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepnw"]
+atlas = ExtResource("2_w6wd4")
+region = Rect2(176, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex870"]
+atlas = ExtResource("2_w6wd4")
+region = Rect2(192, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn8b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubgce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8baw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex870")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hddx"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2xvm"]
+size = Vector2(75, 8)
+
+[node name="DogAttack" type="Node2D" unique_id=2036478531]
+script = ExtResource("1_lt00h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1894446680]
+sprite_frames = SubResource("SpriteFrames_vn8b1")
+
+[node name="KillArea" type="Area2D" parent="." unique_id=327031365]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=295314177]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_3hddx")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=301827799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=2116357471]
+position = Vector2(-31.5, 2)
+shape = SubResource("RectangleShape2D_m2xvm")
+
+[node name="DogBark" type="AudioStreamPlayer" parent="." unique_id=264381594 groups=["Effects"]]
+stream = ExtResource("3_w6wd4")

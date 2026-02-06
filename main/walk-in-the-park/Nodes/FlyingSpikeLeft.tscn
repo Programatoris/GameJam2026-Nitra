@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dfh2wx0imbkgd"]
+
+[ext_resource type="Script" uid="uid://dc7ahrgxr52em" path="res://Scripts/flying_spike_left.gd" id="1_cl7li"]
+[ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_gb0sh"]
+[ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="3_qwhly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl7li"]
+atlas = ExtResource("1_gb0sh")
+region = Rect2(192, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwhly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl7li")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lh0mj"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwhly"]
+size = Vector2(1244, 8)
+
+[node name="FlyingSpikeLeft" type="Node2D" unique_id=1502386981]
+script = ExtResource("1_cl7li")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=559143583]
+sprite_frames = SubResource("SpriteFrames_qwhly")
+
+[node name="KillArea" type="Area2D" parent="." unique_id=1902187642]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=545934697]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_lh0mj")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=200147966]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1447462807]
+position = Vector2(-604, 0)
+shape = SubResource("RectangleShape2D_qwhly")
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="." unique_id=1979969855 groups=["Effects"]]
+stream = ExtResource("3_qwhly")
+volume_db = -10.0
