@@ -215,7 +215,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Test" type="Node2D" unique_id=1104150583]
+[node name="Level1" type="Node2D" unique_id=1104150583]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1934177541]
 offset_right = 40.0
