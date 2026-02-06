@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://csbop77o7n1je"]
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_qgaky"]
+[ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_u3f6s"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_ynbod"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_83ky4"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_u3f6s"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_l72yf"]
-[ext_resource type="PackedScene" uid="uid://jbipmbvle5rj" path="res://Nodes/FlyingSpikeLeft.tscn" id="5_qgaky"]
+[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeLeft.tscn" id="5_qgaky"]
 [ext_resource type="PackedScene" uid="uid://b6t2cd6bl7cpa" path="res://Nodes/Flying_circul_sideways.tscn" id="8_fnxlo"]
-[ext_resource type="PackedScene" uid="uid://bkhkxtejv4m5r" path="res://Nodes/spike.tscn" id="9_3awlu"]
+[ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="9_3awlu"]
 [ext_resource type="PackedScene" uid="uid://okvpcu3xhtyt" path="res://Nodes/JumpBoost.tscn" id="9_gxpkw"]
-[ext_resource type="PackedScene" uid="uid://dsm6i0hqw8jej" path="res://Nodes/AlternatePlayer.tscn" id="11_787xw"]
-[ext_resource type="PackedScene" uid="uid://ch7cvueg22qoo" path="res://Nodes/FlagReverse.tscn" id="11_qgaky"]
-[ext_resource type="PackedScene" uid="uid://i1eu363tsh50" path="res://Nodes/Apple.tscn" id="12_ynbod"]
-[ext_resource type="PackedScene" uid="uid://c43q8hmnt814o" path="res://Nodes/FlyingSpikeUp.tscn" id="13_83ky4"]
+[ext_resource type="PackedScene" path="res://Nodes/AlternatePlayer.tscn" id="11_787xw"]
+[ext_resource type="PackedScene" path="res://Nodes/FlagReverse.tscn" id="11_qgaky"]
+[ext_resource type="PackedScene" path="res://Nodes/Apple.tscn" id="12_ynbod"]
+[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeUp.tscn" id="13_83ky4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2juu"]
 texture = ExtResource("5_l72yf")
@@ -200,6 +201,14 @@ texture = ExtResource("5_l72yf")
 sources/0 = SubResource("TileSetAtlasSource_q6d54")
 
 [node name="Level7" type="Node2D" unique_id=929206375]
+
+[node name="PauseMenu" parent="." unique_id=1752692991 instance=ExtResource("1_u3f6s")]
+visible = false
+z_index = 10
+offset_left = 44.41
+offset_top = 73.53
+offset_right = 44.41
+offset_bottom = 73.53
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1311658386]
 offset_right = 40.0

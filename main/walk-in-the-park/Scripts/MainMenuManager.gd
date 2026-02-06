@@ -11,6 +11,9 @@ var map_selector: Node = null
 func _ready() -> void:
 	#print(Time.get_unix_time_from_datetime_string(Time.get_date_string_from_system()))
 	dontPause()
+	get_tree().paused = false
+	if name == "PauseMenu":
+		visible = false
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

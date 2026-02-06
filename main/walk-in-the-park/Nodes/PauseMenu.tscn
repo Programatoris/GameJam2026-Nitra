@@ -10,7 +10,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_h13p5")
 
 [node name="MainMenu" type="VBoxContainer" parent="." unique_id=1941099711 groups=["UI"]]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +45,7 @@ text = "Main Menu"
 flat = true
 
 [node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=778167554 groups=["UI"]]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
