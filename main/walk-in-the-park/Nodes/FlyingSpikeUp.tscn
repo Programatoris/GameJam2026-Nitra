@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c43q8hmnt814o"]
+
+[ext_resource type="Script" uid="uid://cqkqm3p2wnocp" path="res://Scripts/flying_spike_up.gd" id="1_2krp1"]
+[ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_orioq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2krp1"]
+atlas = ExtResource("1_orioq")
+region = Rect2(208, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq7nx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2krp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_meok1"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ema"]
+size = Vector2(18, 512.5)
+
+[node name="FlyingSpikeUp" type="Node2D" unique_id=1393011176]
+script = ExtResource("1_2krp1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1320524060]
+sprite_frames = SubResource("SpriteFrames_oq7nx")
+
+[node name="KillArea" type="Area2D" parent="." unique_id=1080119251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=1454088650]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_meok1")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=96699692]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=627339635]
+position = Vector2(0, -240.75)
+shape = SubResource("RectangleShape2D_h7ema")

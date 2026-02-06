@@ -5,7 +5,7 @@ extends Node2D
 
 var triggered := false
 var is_falling := false
-var fall_speed := 350.0
+var fall_speed := 400.0
 var detection_range := 50000.0
 
 var player: Node2D = null
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	
 	# Fall if triggered
 	if is_falling:
-		position.y += fall_speed * delta
+		position.y -= fall_speed * delta
 
 func _on_detection_entered(body: Node) -> void:
 	if body.is_in_group("player"):
