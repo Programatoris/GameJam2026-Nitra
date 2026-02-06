@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca3mubenoekhe"]
 
 [ext_resource type="Script" uid="uid://bekfxp7dvq7k" path="res://Scenes/Maps/level_10.gd" id="1_il3g8"]
-[ext_resource type="PackedScene" path="res://Nodes/PauseMenu.tscn" id="1_j2dqn"]
+[ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_j2dqn"]
 [ext_resource type="PackedScene" uid="uid://ddfug6grk8ows" path="res://Nodes/FallingSpike10.tscn" id="2_eo5ck"]
 [ext_resource type="AudioStream" uid="uid://v3pffgrsfoe6" path="res://Audio/Music/pianoSomething.wav" id="2_qdumd"]
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="3_gfhf3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="6_yeru4"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="9_blkm6"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="10_cl1fk"]
+[ext_resource type="PackedScene" uid="uid://cbuhjrn64w1r7" path="res://Nodes/DogFinal.tscn" id="11_capm3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8adxo"]
 texture = ExtResource("9_blkm6")
@@ -296,7 +297,7 @@ zoom = Vector2(3, 3)
 process_callback = 0
 
 [node name="CharacterBody2D" parent="." unique_id=1640583849 instance=ExtResource("10_cl1fk")]
-position = Vector2(-261, 216)
+position = Vector2(26, 224)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=604085619]
 
@@ -311,8 +312,24 @@ step = 1.0
 value = 60.0
 show_percentage = false
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1226129126]
+visible = false
+offset_left = 695.0
+offset_top = 34.0
+offset_right = 1154.0
+offset_bottom = 207.0
+text = "Thanks For Playing "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HealthTimer" type="Timer" parent="." unique_id=342762541]
 autostart = true
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=414180614]
+wait_time = 0.031
 autostart = true
+
+[node name="DogFinal" parent="." unique_id=379014767 instance=ExtResource("11_capm3")]
+visible = false
+position = Vector2(-112, 232)
+player_path = NodePath("../CharacterBody2D")
