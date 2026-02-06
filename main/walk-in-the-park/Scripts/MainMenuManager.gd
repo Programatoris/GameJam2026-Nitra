@@ -4,6 +4,7 @@ extends Control
 #================================================================================
 # Variables
 var map_selector: Node = null
+@onready var button_select: AudioStreamPlayer = $ButtonSelect
 
 
 #================================================================================
@@ -14,6 +15,7 @@ func _ready() -> void:
 	get_tree().paused = false
 	if name == "PauseMenu":
 		visible = false
+
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -46,35 +48,56 @@ func _on_start_button_pressed() -> void:
 	var map_selector_scene = preload("res://Scenes/LevelSelector.tscn")
 	map_selector = map_selector_scene.instantiate()
 	
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
+	
 	$MainMenu.visible = false
 	get_tree().current_scene.add_child(map_selector)
 	dontPause()
 
 
 func _on_options_button_pressed() -> void:
+	await get_tree().create_timer(0.1).timeout
+	button_select.play()
+	
 	$OptionsMenu.visible = true
 	$MainMenu.visible = false
 
 
 func _on_credits_pressed() -> void:
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
+	
 	print("Credits")
 
 
 func _on_quit_button_pressed() -> void:
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
+	
 	get_tree().quit()
 
 
 func _on_button_pressed() -> void:
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
+	
 	var window: bool = DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if window else DisplayServer.WINDOW_MODE_WINDOWED)
 	
 	
 func _on_unpause_button_pressed() -> void:
+	await get_tree().create_timer(0.1).timeout
+	button_select.play()
+	
 	get_tree().paused = false
 	visible = false
 
 
 func _on_back_to_main_menu_pressed() -> void:
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
+	
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 
 

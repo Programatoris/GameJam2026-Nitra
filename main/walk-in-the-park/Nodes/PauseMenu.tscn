@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenuManager.gd" id="1_h13p5"]
 [ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderText.gd" id="2_8xdnx"]
+[ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_rfcqb"]
+[ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="2_tjwai"]
+[ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="3_tjwai"]
 
 [node name="PauseMenu" type="Control" unique_id=1752692991 groups=["UI"]]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_h13p5")
+
+[node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=1352842671 groups=["Effects"]]
+stream = ExtResource("2_tjwai")
 
 [node name="MainMenu" type="VBoxContainer" parent="." unique_id=1941099711 groups=["UI"]]
 layout_mode = 1
@@ -29,6 +35,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Unpause"
 flat = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/UnpauseButton" unique_id=1409470840 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
 
 [node name="OptionsButton" type="Button" parent="MainMenu" unique_id=758669265]
 custom_minimum_size = Vector2(300, 80)
@@ -36,6 +46,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Options"
 flat = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/OptionsButton" unique_id=962107485 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
 
 [node name="BackToMainMenu" type="Button" parent="MainMenu" unique_id=2082036615]
 custom_minimum_size = Vector2(300, 80)
@@ -43,6 +57,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Main Menu"
 flat = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/BackToMainMenu" unique_id=1003276780 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
 
 [node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=778167554 groups=["UI"]]
 visible = false
@@ -158,6 +176,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "FULLSCREEN"
 flat = true
+script = ExtResource("2_rfcqb")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="OptionsMenu/UiScaleSlider2/Button" unique_id=1546149279 groups=["Effects"]]
+stream = ExtResource("3_tjwai")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1530131353]
 layout_mode = 0

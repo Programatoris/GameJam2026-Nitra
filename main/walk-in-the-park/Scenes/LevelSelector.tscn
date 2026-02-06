@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dfx7dcxb0xd07"]
 
 [ext_resource type="Script" uid="uid://c1vc7sudk6oje" path="res://Scripts/LevelSelector.gd" id="1_ampnh"]
+[ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_lirpq"]
+[ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="3_8iqa8"]
+[ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="4_8iqa8"]
 
 [node name="LevelSelector" type="Control" unique_id=703801004 groups=["UI"]]
 layout_mode = 3
@@ -20,5 +23,12 @@ offset_bottom = 125.0
 theme_override_font_sizes/font_size = 48
 text = "RESET LEVELS"
 flat = true
+script = ExtResource("2_lirpq")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="ResetLevelButton" unique_id=1049288674 groups=["Effects"]]
+stream = ExtResource("3_8iqa8")
+
+[node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=1722859906 groups=["Effects"]]
+stream = ExtResource("4_8iqa8")
 
 [connection signal="pressed" from="ResetLevelButton" to="." method="_on_reset_level_button_pressed"]

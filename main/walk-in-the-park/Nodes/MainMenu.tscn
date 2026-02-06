@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://dv3d4xc7iv0u7"]
 
 [ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenuManager.gd" id="1_nndrw"]
+[ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_cdxh8"]
+[ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="2_hqlno"]
+[ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="2_m8gkc"]
 [ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderText.gd" id="2_umfbs"]
 
 [node name="MainMenu" type="Control" unique_id=2121068006 groups=["UI"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_nndrw")
+
+[node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=1879328746 groups=["Effects"]]
+stream = ExtResource("2_hqlno")
 
 [node name="MainMenu" type="VBoxContainer" parent="." unique_id=122829806]
 layout_mode = 1
@@ -28,6 +34,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Start"
 flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/StartButton" unique_id=455983565 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
 
 [node name="OptionsButton" type="Button" parent="MainMenu" unique_id=3090276]
 custom_minimum_size = Vector2(300, 100)
@@ -35,6 +45,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Options"
 flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/OptionsButton" unique_id=1339360230 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
 
 [node name="Credits" type="Button" parent="MainMenu" unique_id=1820414212]
 custom_minimum_size = Vector2(300, 100)
@@ -42,6 +56,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/Credits" unique_id=2087374889 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
 
 [node name="QuitButton" type="Button" parent="MainMenu" unique_id=1641273468]
 custom_minimum_size = Vector2(300, 100)
@@ -49,6 +67,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit Game"
 flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/QuitButton" unique_id=111649795 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
 
 [node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=1388395060]
 visible = false
@@ -164,8 +186,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "FULLSCREEN"
 flat = true
+script = ExtResource("2_cdxh8")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="OptionsMenu/UiScaleSlider2/Button" unique_id=372337235 groups=["Effects"]]
+stream = ExtResource("2_m8gkc")
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainMenu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsMenu/UiScaleSlider/SliderWithText/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/UiScaleSlider2/Button" to="." method="_on_button_pressed"]

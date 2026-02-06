@@ -6,6 +6,8 @@ extends Node
 const LEVELS_PATH: String = "res://Scenes/Maps/Level"
 var level_path: String = ""
 var level: Node
+@onready var button_select: AudioStreamPlayer = $ButtonSelect
+
 
 #================================================================================
 # Variables
@@ -39,11 +41,8 @@ func on_button_pressed() -> void:
 	
 	if not FileAccess.file_exists(level_path):
 		return
+		
+	button_select.play()
+	await get_tree().create_timer(0.1).timeout
 	
-	#level = load(level_path).instantiate()
-	#var parent = get_parent()
-	#parent.visible = false
-	#add_child(level)
 	get_tree().change_scene_to_file(level_path)
-	#get_tree().root.get_node("Main").add_child(level)
-	#get_tree().current_scene.add_child(level)

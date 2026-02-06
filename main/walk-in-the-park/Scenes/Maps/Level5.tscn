@@ -1,16 +1,18 @@
-[gd_scene format=3 uid="uid://bjd3lmsnylfq8"]
+[gd_scene format=3 uid="uid://sibnnrgxu8km"]
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_e33n6"]
+[ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_v7mi8"]
+[ext_resource type="AudioStream" uid="uid://v3pffgrsfoe6" path="res://Audio/Music/pianoSomething.wav" id="2_gpb0y"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_twssk"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_0l17q"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_siaw8"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_08orq"]
-[ext_resource type="PackedScene" uid="uid://ddqh1rxng8o8a" path="res://Nodes/Flag.tscn" id="6_v7mi8"]
+[ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="6_v7mi8"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="7_gpb0y"]
-[ext_resource type="PackedScene" uid="uid://i1eu363tsh50" path="res://Nodes/Apple.tscn" id="8_twssk"]
-[ext_resource type="PackedScene" uid="uid://decfw5yejxcuy" path="res://Nodes/dog_attack.tscn" id="9_0l17q"]
-[ext_resource type="PackedScene" uid="uid://xdvd3hugq3ox" path="res://Nodes/Flying_circular.tscn" id="10_08orq"]
-[ext_resource type="PackedScene" uid="uid://bkhkxtejv4m5r" path="res://Nodes/spike.tscn" id="11_v7mi8"]
+[ext_resource type="PackedScene" path="res://Nodes/Apple.tscn" id="8_twssk"]
+[ext_resource type="PackedScene" path="res://Nodes/dog_attack.tscn" id="9_0l17q"]
+[ext_resource type="PackedScene" path="res://Nodes/Flying_circular.tscn" id="10_08orq"]
+[ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="11_v7mi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_piwmk"]
 texture = ExtResource("5_08orq")
@@ -198,6 +200,18 @@ texture = ExtResource("5_08orq")
 sources/0 = SubResource("TileSetAtlasSource_36rie")
 
 [node name="Level5" type="Node2D" unique_id=131299888]
+
+[node name="PauseMenu" parent="." unique_id=1752692991 instance=ExtResource("1_v7mi8")]
+visible = false
+z_index = 10
+offset_left = 44.41
+offset_top = 73.53
+offset_right = 44.41
+offset_bottom = 73.53
+
+[node name="PianoSomething" type="AudioStreamPlayer" parent="." unique_id=445022788 groups=["Music"]]
+stream = ExtResource("2_gpb0y")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1651454894]
 offset_right = 40.0

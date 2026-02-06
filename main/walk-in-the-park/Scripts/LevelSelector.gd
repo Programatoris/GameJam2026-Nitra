@@ -8,6 +8,7 @@ const MAX_V_LEVEL: int = 2
 const OFSET_H: int = 225
 const OFSET_V: int = 225
 const LEVEL_ICON: PackedScene = preload("res://Nodes/LevelIcon.tscn")
+@onready var button_select: AudioStreamPlayer = $ButtonSelect
 
 
 #================================================================================
@@ -30,6 +31,9 @@ func _process(delta: float) -> void:
 
 
 func _on_reset_level_button_pressed() -> void:
+	button_select.play()
+	await get_tree().create_timer(0.2).timeout
+	
 	Data.levelDataFiller()
 	Data.saveData()
 	get_tree().reload_current_scene()
