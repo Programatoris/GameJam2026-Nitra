@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ddqh1rxng8o8a"]
+
+[ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_ebg56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccxhu"]
+atlas = ExtResource("1_ebg56")
+region = Rect2(272, 112, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hecwe"]
+atlas = ExtResource("1_ebg56")
+region = Rect2(288, 112, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w1tv"]
+atlas = ExtResource("1_ebg56")
+region = Rect2(304, 112, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ostxw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccxhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hecwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w1tv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Node2D" unique_id=1022768761]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=442339896]
+position = Vector2(9, -20)
+sprite_frames = SubResource("SpriteFrames_ostxw")
+autoplay = "default"
+frame_progress = 0.4946774
