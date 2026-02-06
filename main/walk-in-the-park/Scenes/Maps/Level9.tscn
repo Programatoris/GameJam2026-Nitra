@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfta40657e7d5"]
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_f7gr8"]
-[ext_resource type="PackedScene" uid="uid://c6ni35cqm24jt" path="res://Nodes/PauseMenu.tscn" id="1_w2i42"]
+[ext_resource type="PackedScene" path="res://Nodes/PauseMenu.tscn" id="1_w2i42"]
 [ext_resource type="AudioStream" uid="uid://v3pffgrsfoe6" path="res://Audio/Music/pianoSomething.wav" id="2_irslr"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_qlp5c"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_kp0ta"]
@@ -11,14 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://cwbgtq7fq1lm2" path="res://Nodes/good_dog.tscn" id="7_vx22f"]
 [ext_resource type="PackedScene" uid="uid://okvpcu3xhtyt" path="res://Nodes/JumpBoost.tscn" id="8_w2i42"]
 [ext_resource type="PackedScene" uid="uid://b6t2cd6bl7cpa" path="res://Nodes/Flying_circul_sideways.tscn" id="10_oepd2"]
-[ext_resource type="PackedScene" path="res://Nodes/Flipper.tscn" id="11_f7gr8"]
+[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="10_to8rd"]
+[ext_resource type="PackedScene" uid="uid://dh5qp1pfatk20" path="res://Nodes/Flipper.tscn" id="11_f7gr8"]
 [ext_resource type="Texture2D" uid="uid://e717055ubqjm" path="res://visuals/sprites/adadad.png" id="12_qlp5c"]
-[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeUp.tscn" id="13_elpaq"]
-[ext_resource type="PackedScene" path="res://Nodes/sunbeam.tscn" id="13_kp0ta"]
+[ext_resource type="PackedScene" uid="uid://c43q8hmnt814o" path="res://Nodes/FlyingSpikeUp.tscn" id="13_elpaq"]
+[ext_resource type="PackedScene" uid="uid://dfb6oi467ue4p" path="res://Nodes/sunbeam.tscn" id="13_kp0ta"]
 [ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="15_irslr"]
-[ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="15_nnda4"]
-[ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="16_nnda4"]
-[ext_resource type="PackedScene" path="res://Nodes/Circular.tscn" id="16_vx22f"]
+[ext_resource type="PackedScene" uid="uid://bkhkxtejv4m5r" path="res://Nodes/spike.tscn" id="15_nnda4"]
+[ext_resource type="PackedScene" uid="uid://ddqh1rxng8o8a" path="res://Nodes/Flag.tscn" id="16_nnda4"]
+[ext_resource type="PackedScene" uid="uid://bk401vgiho2jy" path="res://Nodes/Circular.tscn" id="16_vx22f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cxqds"]
 texture = ExtResource("5_hqhb6")
@@ -308,6 +309,9 @@ position = Vector2(-261, 216)
 
 [node name="GoodDog" parent="." unique_id=100526955 instance=ExtResource("7_vx22f")]
 position = Vector2(-191, 231)
+
+[node name="DogBark" type="AudioStreamPlayer" parent="GoodDog" unique_id=444831699 groups=["Effects"]]
+stream = ExtResource("10_to8rd")
 
 [node name="Sunbeam" parent="." unique_id=761177007 instance=ExtResource("13_kp0ta")]
 position = Vector2(-12.999996, -8)

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ddfug6grk8ows"]
+
+[ext_resource type="Texture2D" uid="uid://dh8js2mdce5gi" path="res://visuals/sprites/tilemap_sprites2.png" id="1_0niqi"]
+[ext_resource type="Script" uid="uid://cl1th6w7asafi" path="res://Nodes/area_2d.gd" id="1_1ch5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ch5i"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n67k4"]
+atlas = ExtResource("1_0niqi")
+region = Rect2(208, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0gn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n67k4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FallingSpike10" type="Node2D" unique_id=606934631]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1807035155]
+script = ExtResource("1_1ch5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=143362162]
+shape = SubResource("CircleShape2D_1ch5i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=639014100]
+position = Vector2(0, 6)
+sprite_frames = SubResource("SpriteFrames_x0gn3")
