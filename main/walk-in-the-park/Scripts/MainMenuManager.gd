@@ -21,3 +21,8 @@ func _on_credits_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_h_slider_value_changed(_value: float) -> void:
+	await get_tree().create_timer(0.1).timeout
+	scale = Vector2(_value, _value)

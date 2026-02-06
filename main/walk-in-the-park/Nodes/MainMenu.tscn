@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dv3d4xc7iv0u7"]
 
-[ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenu.gd" id="1_nndrw"]
-[ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderPercentageText.gd" id="2_umfbs"]
+[ext_resource type="Script" uid="uid://b1tbvkilk5jfb" path="res://Scripts/MainMenuManager.gd" id="1_nndrw"]
+[ext_resource type="Script" uid="uid://b33gwdgndbtvh" path="res://Scripts/SliderText.gd" id="2_umfbs"]
 
 [node name="MainMenu" type="Control" unique_id=2121068006]
 layout_mode = 3
@@ -57,48 +57,75 @@ offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SliderSegment" type="HBoxContainer" parent="OptionsMenu" unique_id=1503562917]
+[node name="MusicSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1503562917]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="OptionsMenu/SliderSegment" unique_id=751948596]
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider" unique_id=751948596]
 custom_minimum_size = Vector2(73.515, 48)
 layout_mode = 2
 text = "Music"
 horizontal_alignment = 1
 
-[node name="SliderWithPercentageText" type="VBoxContainer" parent="OptionsMenu/SliderSegment" unique_id=1090225291]
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/MusicSlider" unique_id=1090225291]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HSlider" type="HSlider" parent="OptionsMenu/SliderSegment/SliderWithPercentageText" unique_id=664618348]
+[node name="HSlider" type="HSlider" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=664618348]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 script = ExtResource("2_umfbs")
 
-[node name="Label" type="Label" parent="OptionsMenu/SliderSegment/SliderWithPercentageText" unique_id=203201751]
+[node name="Label" type="Label" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=203201751]
 layout_mode = 2
 text = "100%"
 horizontal_alignment = 1
 
-[node name="SliderSegment2" type="HBoxContainer" parent="OptionsMenu" unique_id=1669842941]
+[node name="EffectsSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1669842941]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="OptionsMenu/SliderSegment2" unique_id=1587818999]
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider" unique_id=1587818999]
 custom_minimum_size = Vector2(73.515, 48)
 layout_mode = 2
 text = "Effects"
 horizontal_alignment = 1
 
-[node name="SliderWithPercentageText" type="VBoxContainer" parent="OptionsMenu/SliderSegment2" unique_id=72016751]
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/EffectsSlider" unique_id=72016751]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HSlider" type="HSlider" parent="OptionsMenu/SliderSegment2/SliderWithPercentageText" unique_id=1681218560]
+[node name="HSlider" type="HSlider" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=1681218560]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 script = ExtResource("2_umfbs")
 
-[node name="Label" type="Label" parent="OptionsMenu/SliderSegment2/SliderWithPercentageText" unique_id=62473463]
+[node name="Label" type="Label" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=62473463]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="UiScaleSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1901900875]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider" unique_id=1817862569]
+custom_minimum_size = Vector2(73.515, 48)
+layout_mode = 2
+text = "UI Scale"
+horizontal_alignment = 1
+
+[node name="SliderWithText" type="VBoxContainer" parent="OptionsMenu/UiScaleSlider" unique_id=917025795]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=1778947222]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.5
+value = 1.0
+script = ExtResource("2_umfbs")
+
+[node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=146095066]
 layout_mode = 2
 text = "100%"
 horizontal_alignment = 1
@@ -107,3 +134,4 @@ horizontal_alignment = 1
 [connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainMenu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsMenu/UiScaleSlider/SliderWithText/HSlider" to="." method="_on_h_slider_value_changed"]
