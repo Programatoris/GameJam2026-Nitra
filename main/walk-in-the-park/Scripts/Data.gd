@@ -1,18 +1,19 @@
 extends Node
 
 
-#==================================================
+#================================================================================
 # Constants
 const SAVE_PATH: String = "res://Saves/SAVE.json"
 
 
-#==================================================
+#================================================================================
 # Variables
-var level_count: int = 5
+var level_count: int = 10
 var level_data_preset: Dictionary = {
-	"level": 1,
+	"level": 0,
 	"attemps": 0,
-	"time": "00:00:000"
+	"time": "00:00:000",
+	"passed_levels": 0
 }
 var data: Dictionary = {
 	"player_data": {
@@ -29,17 +30,11 @@ var data: Dictionary = {
 }
 
 
-#==================================================
+#================================================================================
 # Functions
 func _ready() -> void:
 	levelDataFiller()
 	loadData()
-
-
-func levelDataFiller():
-	for i in level_count:
-		level_data_preset["level"] = i
-		data["level_data"].append(level_data_preset)
 
 
 func saveData() -> void:
@@ -68,3 +63,15 @@ func loadData() -> void:
 	var raw_data: Dictionary = JSON.parse_string(data_as_string)
 	if not raw_data.is_empty():
 		data = raw_data
+
+
+#==================================================
+# Helper functions
+func levelDataFiller() -> void:
+	data["level_data"] = []
+
+	for i in range(level_count):
+		var level_entry := level_data_preset.duplicate(true)
+		level_entry["level"] = i + 1
+
+		data["level_data"].append(level_entry)

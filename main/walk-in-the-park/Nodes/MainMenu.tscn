@@ -9,7 +9,6 @@ anchors_preset = 0
 script = ExtResource("1_nndrw")
 
 [node name="MainMenu" type="VBoxContainer" parent="." unique_id=1252399401]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,45 +23,64 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="MainMenu" unique_id=1841660413]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Start"
 flat = true
 
 [node name="OptionsButton" type="Button" parent="MainMenu" unique_id=2111542389]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Options"
 flat = true
 
 [node name="Credits" type="Button" parent="MainMenu" unique_id=250115428]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Credits"
 flat = true
 
 [node name="QuitButton" type="Button" parent="MainMenu" unique_id=1522551495]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Quit Game"
 flat = true
 
 [node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=739651276]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -88.5
-offset_top = -29.0
-offset_right = 88.5
-offset_bottom = 29.0
+offset_left = -214.5
+offset_top = -238.5
+offset_right = 214.5
+offset_bottom = 238.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsMenu" unique_id=577981184]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "OPTIONS"
+horizontal_alignment = 1
 
 [node name="MusicSlider" type="HBoxContainer" parent="OptionsMenu" unique_id=1503562917]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/MusicSlider" unique_id=751948596]
-custom_minimum_size = Vector2(73.515, 48)
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Music"
 horizontal_alignment = 1
 
@@ -71,12 +89,13 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=664618348]
-custom_minimum_size = Vector2(100, 30)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 script = ExtResource("2_umfbs")
 
 [node name="Label" type="Label" parent="OptionsMenu/MusicSlider/SliderWithText" unique_id=203201751]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "100%"
 horizontal_alignment = 1
 
@@ -84,8 +103,10 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/EffectsSlider" unique_id=1587818999]
-custom_minimum_size = Vector2(73.515, 48)
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Effects"
 horizontal_alignment = 1
 
@@ -94,12 +115,13 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=1681218560]
-custom_minimum_size = Vector2(100, 30)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 script = ExtResource("2_umfbs")
 
 [node name="Label" type="Label" parent="OptionsMenu/EffectsSlider/SliderWithText" unique_id=62473463]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "100%"
 horizontal_alignment = 1
 
@@ -107,8 +129,10 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider" unique_id=1817862569]
-custom_minimum_size = Vector2(73.515, 48)
+texture_filter = 1
+custom_minimum_size = Vector2(250, 138.775)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "UI Scale"
 horizontal_alignment = 1
 
@@ -117,7 +141,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=1778947222]
-custom_minimum_size = Vector2(100, 30)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 min_value = 0.5
 max_value = 5.0
@@ -127,6 +151,7 @@ script = ExtResource("2_umfbs")
 
 [node name="Label" type="Label" parent="OptionsMenu/UiScaleSlider/SliderWithText" unique_id=146095066]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "100%"
 horizontal_alignment = 1
 

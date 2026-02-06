@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dfx7dcxb0xd07"]
+
+[ext_resource type="Script" uid="uid://c1vc7sudk6oje" path="res://Scripts/LevelSelector.gd" id="1_ampnh"]
+
+[node name="LevelSelector" type="Control" unique_id=703801004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ampnh")
+
+[node name="ResetLevelButton" type="Button" parent="." unique_id=865947162]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 371.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 48
+text = "RESET LEVELS"
+flat = true
+
+[connection signal="pressed" from="ResetLevelButton" to="." method="_on_reset_level_button_pressed"]
