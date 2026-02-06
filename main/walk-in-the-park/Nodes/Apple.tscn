@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://i1eu363tsh50"]
+
+[ext_resource type="Script" uid="uid://bp2prwv1hou7" path="res://Scripts/apple.gd" id="1_ma4qs"]
+[ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_orrqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ma4qs"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1248x"]
+atlas = ExtResource("1_orrqy")
+region = Rect2(208, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40yfb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1248x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma4qs"]
+size = Vector2(22, 172)
+
+[node name="Apple" type="Node2D" unique_id=1593050298]
+script = ExtResource("1_ma4qs")
+
+[node name="KillArea" type="Area2D" parent="." unique_id=1219936042]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=206546427]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_ma4qs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1112290998]
+sprite_frames = SubResource("SpriteFrames_40yfb")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1441813040]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=886872169]
+position = Vector2(0, 82)
+shape = SubResource("RectangleShape2D_ma4qs")
