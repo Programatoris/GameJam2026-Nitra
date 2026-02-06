@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1vc7sudk6oje" path="res://Scripts/LevelSelector.gd" id="1_ampnh"]
 
-[node name="LevelSelector" type="Control" unique_id=703801004]
+[node name="LevelSelector" type="Control" unique_id=703801004 groups=["UI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

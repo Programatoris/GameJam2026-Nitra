@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbcohmhha4eou" path="res://Scripts/LevelIcon.gd" id="1_l2x48"]
 
-[node name="LevelIcon" type="Control" unique_id=984791534]
+[node name="LevelIcon" type="Control" unique_id=984791534 groups=["UI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

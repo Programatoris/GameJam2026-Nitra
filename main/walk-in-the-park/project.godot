@@ -28,6 +28,12 @@ window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/scale=0.5
 
+[global_group]
+
+Music=""
+Effects=""
+UI=""
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
