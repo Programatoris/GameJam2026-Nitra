@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="6_txgem"]
 [ext_resource type="PackedScene" uid="uid://ddqh1rxng8o8a" path="res://Nodes/Flag.tscn" id="7_q1h2l"]
 [ext_resource type="PackedScene" uid="uid://bkhkxtejv4m5r" path="res://Nodes/spike.tscn" id="8_mmnpq"]
+[ext_resource type="PackedScene" uid="uid://cwbgtq7fq1lm2" path="res://Nodes/good_dog.tscn" id="9_jqawo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1h2l"]
 texture = ExtResource("6_txgem")
@@ -317,3 +318,6 @@ autoplay = "default"
 
 [node name="CharacterBody2D" parent="." unique_id=1640583849 instance=ExtResource("1_1odni")]
 position = Vector2(-261, 216)
+
+[node name="GoodDog" parent="." unique_id=100526955 instance=ExtResource("9_jqawo")]
+position = Vector2(-116, 232)
