@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cot72rbpmvaer" path="res://visuals/sprites/back_sun.png" id="1_5yapc"]
 [ext_resource type="Texture2D" uid="uid://5vv4m50olqfe" path="res://visuals/sprites/far-clouds.png" id="2_2ouob"]
+[ext_resource type="PackedScene" uid="uid://lrsebkxyd3ni" path="res://Nodes/spike upside.tscn" id="3_2ouob"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_vvfap"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_hbeb3"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_qakxs"]
@@ -207,6 +208,15 @@ position = Vector2(564, 229)
 scale = Vector2(6.515625, 2.6249998)
 texture = ExtResource("1_5yapc")
 
+[node name="Flipper" parent="TextureRect/Sky" unique_id=308766981 instance=ExtResource("12_2ouob")]
+position = Vector2(-168, 189)
+
+[node name="SpikeUpside" parent="TextureRect/Sky" unique_id=29789519 instance=ExtResource("3_2ouob")]
+position = Vector2(-263, -88)
+
+[node name="FlyingSpikeLeft4" parent="TextureRect/Sky" unique_id=1502386981 instance=ExtResource("11_5yapc")]
+position = Vector2(376, 42)
+
 [node name="Bcloud" type="Sprite2D" parent="TextureRect" unique_id=623566035]
 position = Vector2(-207, 77)
 texture = ExtResource("2_2ouob")
@@ -302,10 +312,10 @@ position = Vector2(-169, 205)
 [node name="Flag" parent="." unique_id=1022768761 instance=ExtResource("10_m2ypr")]
 position = Vector2(311, 212)
 
-[node name="Flipper2" parent="." unique_id=308766981 instance=ExtResource("12_2ouob")]
+[node name="Flipper2" parent="." unique_id=1254982140 instance=ExtResource("12_2ouob")]
 position = Vector2(82, -21)
 
-[node name="FlyingSpikeLeft" parent="." unique_id=1502386981 instance=ExtResource("11_5yapc")]
+[node name="FlyingSpikeLeft" parent="." unique_id=384813236 instance=ExtResource("11_5yapc")]
 position = Vector2(375, 119)
 
 [node name="FlyingSpikeLeft2" parent="." unique_id=1889040906 instance=ExtResource("11_5yapc")]
@@ -316,3 +326,162 @@ position = Vector2(376, 68)
 
 [node name="FlyingSpikeLeft4" parent="." unique_id=2049980302 instance=ExtResource("11_5yapc")]
 position = Vector2(376, 42)
+
+[node name="SpikeUpside" parent="." unique_id=887213582 instance=ExtResource("3_2ouob")]
+position = Vector2(-263, -88)
+
+[node name="SpikeUpside3" parent="." unique_id=1021853947 instance=ExtResource("3_2ouob")]
+position = Vector2(-526, -176)
+
+[node name="SpikeUpside2" parent="." unique_id=289261515 instance=ExtResource("3_2ouob")]
+position = Vector2(-54, -88)
+
+[node name="SpikeUpside4" parent="." unique_id=2139786382 instance=ExtResource("3_2ouob")]
+position = Vector2(-68, -88)
+
+[node name="SpikeUpside5" parent="." unique_id=850119192 instance=ExtResource("3_2ouob")]
+position = Vector2(-82, -88)
+
+[node name="SpikeUpside6" parent="." unique_id=255874047 instance=ExtResource("3_2ouob")]
+position = Vector2(-96, -88)
+
+[node name="SpikeUpside7" parent="." unique_id=890650679 instance=ExtResource("3_2ouob")]
+position = Vector2(-110, -88)
+
+[node name="SpikeUpside8" parent="." unique_id=1187923000 instance=ExtResource("3_2ouob")]
+position = Vector2(-124, -88)
+
+[node name="SpikeUpside9" parent="." unique_id=768917198 instance=ExtResource("3_2ouob")]
+position = Vector2(-138, -88)
+
+[node name="SpikeUpside10" parent="." unique_id=2114623845 instance=ExtResource("3_2ouob")]
+position = Vector2(-152, -88)
+
+[node name="SpikeUpside11" parent="." unique_id=577510996 instance=ExtResource("3_2ouob")]
+position = Vector2(-166, -88)
+
+[node name="SpikeUpside12" parent="." unique_id=1254036864 instance=ExtResource("3_2ouob")]
+position = Vector2(-180, -88)
+
+[node name="SpikeUpside13" parent="." unique_id=2022609355 instance=ExtResource("3_2ouob")]
+position = Vector2(-194, -88)
+
+[node name="SpikeUpside14" parent="." unique_id=518920398 instance=ExtResource("3_2ouob")]
+position = Vector2(-208, -88)
+
+[node name="SpikeUpside15" parent="." unique_id=1135860409 instance=ExtResource("3_2ouob")]
+position = Vector2(-222, -88)
+
+[node name="SpikeUpside16" parent="." unique_id=1417800821 instance=ExtResource("3_2ouob")]
+position = Vector2(-236, -88)
+
+[node name="SpikeUpside17" parent="." unique_id=216572464 instance=ExtResource("3_2ouob")]
+position = Vector2(-249, -88)
+
+[node name="SpikeUpside18" parent="." unique_id=13443659 instance=ExtResource("3_2ouob")]
+position = Vector2(44, -88)
+
+[node name="SpikeUpside19" parent="." unique_id=661004009 instance=ExtResource("3_2ouob")]
+position = Vector2(30, -88)
+
+[node name="SpikeUpside20" parent="." unique_id=2126098411 instance=ExtResource("3_2ouob")]
+position = Vector2(16, -88)
+
+[node name="SpikeUpside21" parent="." unique_id=996632308 instance=ExtResource("3_2ouob")]
+position = Vector2(2, -88)
+
+[node name="SpikeUpside22" parent="." unique_id=1060441907 instance=ExtResource("3_2ouob")]
+position = Vector2(-12, -88)
+
+[node name="SpikeUpside23" parent="." unique_id=395718041 instance=ExtResource("3_2ouob")]
+position = Vector2(-26, -88)
+
+[node name="SpikeUpside24" parent="." unique_id=1208253553 instance=ExtResource("3_2ouob")]
+position = Vector2(-40, -88)
+
+[node name="FlyingSpikeLeft5" parent="." unique_id=2136088838 instance=ExtResource("11_5yapc")]
+position = Vector2(378, -11)
+
+[node name="FlyingSpikeLeft6" parent="." unique_id=398136050 instance=ExtResource("11_5yapc")]
+position = Vector2(377, -4)
+
+[node name="SpikeUpside25" parent="." unique_id=905838180 instance=ExtResource("3_2ouob")]
+position = Vector2(188, -88)
+
+[node name="SpikeUpside26" parent="." unique_id=1067376777 instance=ExtResource("3_2ouob")]
+position = Vector2(175, -88)
+
+[node name="SpikeUpside27" parent="." unique_id=1019674019 instance=ExtResource("3_2ouob")]
+position = Vector2(162, -88)
+
+[node name="SpikeUpside28" parent="." unique_id=1177809379 instance=ExtResource("3_2ouob")]
+position = Vector2(150, -88)
+
+[node name="SpikeUpside29" parent="." unique_id=1467968026 instance=ExtResource("3_2ouob")]
+position = Vector2(137, -88)
+
+[node name="SpikeUpside30" parent="." unique_id=1389190180 instance=ExtResource("3_2ouob")]
+position = Vector2(124, -88)
+
+[node name="SpikeUpside31" parent="." unique_id=419234789 instance=ExtResource("3_2ouob")]
+position = Vector2(111, -88)
+
+[node name="SpikeUpside32" parent="." unique_id=232498864 instance=ExtResource("3_2ouob")]
+position = Vector2(98, -88)
+
+[node name="SpikeUpside33" parent="." unique_id=1248156718 instance=ExtResource("3_2ouob")]
+position = Vector2(85, -88)
+
+[node name="SpikeUpside34" parent="." unique_id=1269236034 instance=ExtResource("3_2ouob")]
+position = Vector2(71, -88)
+
+[node name="SpikeUpside35" parent="." unique_id=559725791 instance=ExtResource("3_2ouob")]
+position = Vector2(58, -88)
+
+[node name="SpikeUpside36" parent="." unique_id=130378425 instance=ExtResource("3_2ouob")]
+position = Vector2(257, -88)
+
+[node name="SpikeUpside37" parent="." unique_id=1662926402 instance=ExtResource("3_2ouob")]
+position = Vector2(243, -88)
+
+[node name="SpikeUpside38" parent="." unique_id=1589978864 instance=ExtResource("3_2ouob")]
+position = Vector2(230, -88)
+
+[node name="SpikeUpside39" parent="." unique_id=171457308 instance=ExtResource("3_2ouob")]
+position = Vector2(216, -88)
+
+[node name="SpikeUpside42" parent="." unique_id=1798021219 instance=ExtResource("3_2ouob")]
+position = Vector2(390, -176)
+
+[node name="SpikeUpside40" parent="." unique_id=792021418 instance=ExtResource("3_2ouob")]
+position = Vector2(202, -88)
+
+[node name="SpikeUpside41" parent="." unique_id=978373644 instance=ExtResource("3_2ouob")]
+position = Vector2(270, -88)
+
+[node name="SpikeUpside43" parent="." unique_id=2075881246 instance=ExtResource("3_2ouob")]
+position = Vector2(296, -88)
+
+[node name="SpikeUpside44" parent="." unique_id=1468201752 instance=ExtResource("3_2ouob")]
+position = Vector2(283, -88)
+
+[node name="SpikeUpside45" parent="." unique_id=958182504 instance=ExtResource("3_2ouob")]
+position = Vector2(335, -88)
+
+[node name="SpikeUpside46" parent="." unique_id=87491111 instance=ExtResource("3_2ouob")]
+position = Vector2(322, -88)
+
+[node name="SpikeUpside48" parent="." unique_id=1591484091 instance=ExtResource("3_2ouob")]
+position = Vector2(618, -176)
+
+[node name="SpikeUpside47" parent="." unique_id=481168071 instance=ExtResource("3_2ouob")]
+position = Vector2(309, -88)
+
+[node name="SpikeUpside49" parent="." unique_id=1535833655 instance=ExtResource("3_2ouob")]
+position = Vector2(362, -88)
+
+[node name="SpikeUpside50" parent="." unique_id=1210520504 instance=ExtResource("3_2ouob")]
+position = Vector2(348, -88)
+
+[node name="SpikeUpside51" parent="." unique_id=714918268 instance=ExtResource("3_2ouob")]
+position = Vector2(376, -88)

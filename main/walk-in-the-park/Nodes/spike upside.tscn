@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://lrsebkxyd3ni"]
+
+[ext_resource type="Script" uid="uid://dpcc225f7q5ly" path="res://Scripts/circular.gd" id="1_72xo3"]
+[ext_resource type="Texture2D" uid="uid://dh8js2mdce5gi" path="res://visuals/sprites/tilemap_sprites2.png" id="1_dojb6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72xo3"]
+atlas = ExtResource("1_dojb6")
+region = Rect2(208, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n15sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72xo3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv0d1"]
+radius = 6.0
+
+[node name="SpikeUpside" type="Node2D" unique_id=29789519]
+script = ExtResource("1_72xo3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1456268195]
+sprite_frames = SubResource("SpriteFrames_n15sf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1646521348]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1345745799]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_bv0d1")
