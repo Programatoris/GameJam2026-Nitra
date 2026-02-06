@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Walk In The Park"
+<<<<<<< Updated upstream
 run/main_scene="uid://d05hcareuu2bv"
+=======
+run/main_scene="uid://gpcj5peheir0"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
