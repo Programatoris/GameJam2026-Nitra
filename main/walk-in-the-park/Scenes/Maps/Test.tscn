@@ -297,6 +297,7 @@ position = Vector2(-261, 216)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1418402580]
 position = Vector2(48, 73)
 zoom = Vector2(3, 3)
+process_callback = 0
 
 [node name="Flag" parent="." unique_id=1022768761 instance=ExtResource("7_q1h2l")]
 position = Vector2(346, 212)

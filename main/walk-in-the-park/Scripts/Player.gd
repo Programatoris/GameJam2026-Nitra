@@ -1,31 +1,40 @@
 extends CharacterBody2D
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -275.0
 
-# Reference to the sprite node
-@onready var sprite = $AnimatedSprite2D  # Change this to match your sprite node name
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	add_to_group("player")
+	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	# Handle jump.
+	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	# Get the input direction and handle the movement/deceleration.
+	# Movement
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction != 0:
 		velocity.x = direction * SPEED
 		
-		# Flip sprite based on direction
-		if direction < 0:  # Moving left
-			sprite.flip_h = true
-		elif direction > 0:  # Moving right
-			sprite.flip_h = false
+		# Flip + offset
+		sprite.flip_h = direction < 0
+		sprite.offset = Vector2(-15, 0) if direction < 0 else Vector2.ZERO
+		
+		# Play run animation
+		if sprite.animation != "pohyb":
+			sprite.play("pohyb")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		# Play idle animation
+		if sprite.animation != "default":
+			sprite.play("default")
 	
 	move_and_slide()
