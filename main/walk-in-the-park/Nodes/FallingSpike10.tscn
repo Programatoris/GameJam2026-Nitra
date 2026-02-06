@@ -32,3 +32,5 @@ shape = SubResource("CircleShape2D_1ch5i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=639014100]
 position = Vector2(0, 6)
 sprite_frames = SubResource("SpriteFrames_x0gn3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
