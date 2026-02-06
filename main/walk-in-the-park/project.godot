@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="Walk In The Park"
-<<<<<<< Updated upstream
 run/main_scene="uid://d05hcareuu2bv"
-=======
-run/main_scene="uid://gpcj5peheir0"
->>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://d05hcareuu2bv"
 
 [autoload]
 
@@ -30,11 +27,6 @@ window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/scale=0.5
-
-[global_group]
-
-Effects="Only for SoundEFFECTS"
-Music="Only for MUSIC"
 
 [physics]
 
