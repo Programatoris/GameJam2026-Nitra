@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://Nodes/Flag.tscn" id="7_q1h2l"]
 [ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="8_mmnpq"]
 [ext_resource type="PackedScene" uid="uid://cwbgtq7fq1lm2" path="res://Nodes/good_dog.tscn" id="9_jqawo"]
+[ext_resource type="Texture2D" uid="uid://c30bbx55mig31" path="res://visuals/Keyboard_Letters_and_Symbols.png" id="12_081ov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1h2l"]
 texture = ExtResource("6_txgem")
@@ -218,6 +219,121 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2hc4"]
+texture = ExtResource("12_081ov")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_su485"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_a2hc4")
+
 [node name="Level1" type="Node2D" unique_id=1104150583]
 
 [node name="PauseMenu" parent="." unique_id=1752692991 instance=ExtResource("2_mhrkc")]
@@ -335,3 +451,9 @@ position = Vector2(-261, 216)
 
 [node name="GoodDog" parent="." unique_id=100526955 instance=ExtResource("9_jqawo")]
 position = Vector2(-116, 232)
+
+[node name="TileMap2" type="TileMap" parent="." unique_id=1285607143]
+position = Vector2(-218, 132)
+tile_set = SubResource("TileSet_su485")
+format = 2
+layer_0/tile_data = PackedInt32Array(524287, 131072, 6, -786419, 131072, 2, -786418, 393216, 3, -655346, 131072, 0, -786417, 327680, 3, -786416, 196608, 4, -655344, 131072, 1342177286, -786415, 65536, 4, -786414, 393216, 3, -655342, 196608, 0, -786413, 196608, 3)
