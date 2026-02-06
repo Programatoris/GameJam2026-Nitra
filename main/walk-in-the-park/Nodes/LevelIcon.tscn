@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cdadhgvb15tpu" path="res://Nodes/hover.gd" id="2_0r7ag"]
 [ext_resource type="AudioStream" uid="uid://bwff4gtuc4mmd" path="res://Audio/SoundEffects/buttonSelect.wav" id="2_1hdy0"]
 [ext_resource type="AudioStream" uid="uid://dafw2xuxe3dc2" path="res://Audio/SoundEffects/buttonHover.wav" id="3_isdna"]
+[ext_resource type="Texture2D" uid="uid://dty545aoi7kid" path="res://visuals/buttonsUI/levelFrame.png" id="5_jmkxv"]
 
 [node name="LevelIcon" type="Control" unique_id=984791534 groups=["UI"]]
 layout_mode = 3
@@ -22,6 +23,7 @@ offset_right = 200.0
 offset_bottom = 200.0
 theme_override_font_sizes/font_size = 48
 text = "-1"
+flat = true
 script = ExtResource("2_0r7ag")
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="Button" unique_id=1828314342 groups=["Effects"]]
@@ -29,3 +31,8 @@ stream = ExtResource("3_isdna")
 
 [node name="ButtonSelect" type="AudioStreamPlayer" parent="." unique_id=181485026 groups=["Effects"]]
 stream = ExtResource("2_1hdy0")
+
+[node name="LevelFrame" type="Sprite2D" parent="." unique_id=7822075]
+z_index = -15
+position = Vector2(99, 101)
+texture = ExtResource("5_jmkxv")

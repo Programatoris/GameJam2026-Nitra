@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_ampnh")
 
 [node name="ResetLevelButton" type="Button" parent="." unique_id=865947162]
+visible = false
 layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
