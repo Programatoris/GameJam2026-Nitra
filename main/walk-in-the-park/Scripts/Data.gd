@@ -25,7 +25,8 @@ var data: Dictionary = {
 	"settings": {
 		"Music": 100,
 		"Effects": 100,
-		"UI_Scale": 1
+		"UI_Scale": 1,
+		"fullscreen": 0
 	}
 }
 
