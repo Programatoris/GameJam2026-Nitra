@@ -41,20 +41,24 @@ func _process(delta: float) -> void:
 
 func _on_detection_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		stone_slide.play()
+		if has_node("StoneSlide"):
+			stone_slide.play()
 		player = body
 
 func _on_detection_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		player = null
 		await get_tree().create_timer(1).timeout
-		stone_slide.stop()
+		if has_node("StoneSlide"):
+			stone_slide.stop()
+
 
 func _on_kill_entered(body: Node) -> void:
 	# Only kill if falling
 	if is_falling and body.is_in_group("player"):
 		if body.has_method("die"):
-			stone_slide.stop()
+			if has_node("StoneSlide"):
+				stone_slide.stop()
 			body.die()
 		reset_level()
 

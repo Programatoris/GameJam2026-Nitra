@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://jbipmbvle5rj"]
+[gd_scene format=3 uid="uid://dfh2wx0imbkgd"]
 
 [ext_resource type="Script" uid="uid://dc7ahrgxr52em" path="res://Scripts/flying_spike_left.gd" id="1_cl7li"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="1_gb0sh"]
+[ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="3_qwhly"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cl7li"]
 atlas = ExtResource("1_gb0sh")
@@ -41,3 +42,7 @@ shape = SubResource("CircleShape2D_lh0mj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1447462807]
 position = Vector2(-604, 0)
 shape = SubResource("RectangleShape2D_qwhly")
+
+[node name="StoneSlide" type="AudioStreamPlayer" parent="." unique_id=1979969855 groups=["Effects"]]
+stream = ExtResource("3_qwhly")
+volume_db = -10.0

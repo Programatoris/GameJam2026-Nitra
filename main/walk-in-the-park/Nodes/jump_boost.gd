@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var detection_area: Area2D = $Area2D
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var collision_thump: AudioStreamPlayer = $CollisionThump
+
 
 var is_active := true
 
@@ -12,6 +14,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	# Reaguj len ak je pickup aktívny a koliduje s hráčom
 	if is_active and body.is_in_group("player"):
+		collision_thump.play()
 		give_double_jump(body)
 
 func give_double_jump(player: Node) -> void:

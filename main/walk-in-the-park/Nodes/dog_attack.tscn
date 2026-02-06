@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://decfw5yejxcuy"]
+[gd_scene format=3 uid="uid://dhdn2ymq0gowr"]
 
 [ext_resource type="Script" uid="uid://d3bi4bpau6vxu" path="res://Scripts/dog_attack.gd" id="1_lt00h"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="2_w6wd4"]
+[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="3_w6wd4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubgce"]
 atlas = ExtResource("2_w6wd4")
@@ -62,3 +63,6 @@ shape = SubResource("CircleShape2D_3hddx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=2116357471]
 position = Vector2(-31.5, 2)
 shape = SubResource("RectangleShape2D_m2xvm")
+
+[node name="DogBark" type="AudioStreamPlayer" parent="." unique_id=264381594 groups=["Effects"]]
+stream = ExtResource("3_w6wd4")

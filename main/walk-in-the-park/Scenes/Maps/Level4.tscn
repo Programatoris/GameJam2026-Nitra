@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="9_xcufa"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="10_4t7ma"]
 [ext_resource type="PackedScene" uid="uid://cwbgtq7fq1lm2" path="res://Nodes/good_dog.tscn" id="11_dty0c"]
-[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="14_hx5ph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5cqv"]
 texture = ExtResource("5_hx5ph")
@@ -337,6 +336,3 @@ position = Vector2(-261, 216)
 
 [node name="GoodDog" parent="." unique_id=100526955 instance=ExtResource("11_dty0c")]
 position = Vector2(-134, 232)
-
-[node name="DogBark" type="AudioStreamPlayer" parent="GoodDog" unique_id=2003830179]
-stream = ExtResource("14_hx5ph")
