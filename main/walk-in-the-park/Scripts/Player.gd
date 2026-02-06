@@ -10,11 +10,15 @@ const JUMP_VELOCITY = -225.0
 var is_dead := false
 var can_double_jump := false
 var is_flipped := false
+# PODSTATNÉ PRE LÚČ: Uloženie štartovacej pozície
+var start_position : Vector2
 
 func _ready() -> void:
 	add_to_group("player")
 	sprite.play("default")
 	safe_margin = 0.15
+	# PODSTATNÉ PRE LÚČ: Zapamätanie si miesta štartu
+	start_position = global_position
 
 func flip_visual():
 	is_flipped = !is_flipped
@@ -22,20 +26,15 @@ func flip_visual():
 	if is_flipped:
 		up_direction = Vector2.DOWN
 		sprite.flip_v = true
-		# OFFSET: Posunie obrázok tak, aby nohy sedeli na strope. 
-		# Hodnotu (napr. 20) uprav podľa výšky tvojho spritu.
 		sprite.offset.y = 9 
 	else:
 		up_direction = Vector2.UP
 		sprite.flip_v = false
-		# Reset offsetu do normálu
 		sprite.offset.y = 0
 	
-	# Mierny fyzický posun celého tela, aby sa kolízia nezasekla
 	position.y += 5.0 if is_flipped else -5.0
 	velocity.y = 0
 	
-	# Dočasné vypnutie kolízie pre hladký prechod
 	set_collision_mask_value(1, false)
 	await get_tree().process_frame
 	set_collision_mask_value(1, true)
@@ -60,9 +59,7 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		velocity.x = direction * SPEED
 		sprite.flip_h = direction < 0
-		# Horizontálny offset pre tvoju animáciu pohybu
 		var h_offset = -15 if direction < 0 else 0
-		# Skombinujeme horizontálny offset s vertikálnym pre gravitáciu
 		sprite.offset = Vector2(h_offset, sprite.offset.y)
 		
 		if sprite.animation != "pohyb": sprite.play("pohyb")
@@ -72,9 +69,24 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+# PODSTATNÉ PRE LÚČ: Upravená funkcia smrti a resetu
 func die():
 	if is_dead: return
 	is_dead = true
 	velocity = Vector2.ZERO
-	collision_shape.set_deferred("disabled", true)
 	sprite.play("death_animation")
+	
+	# Počkáme sekundu na animáciu smrti
+	await get_tree().create_timer(2).timeout
+	
+	# RESET HRÁČA
+	global_position = start_position
+	
+	# Ak zomrel otočený, vrátime gravitáciu do normálu
+	if is_flipped:
+		flip_visual()
+	
+	# Oživenie
+	is_dead = false
+	collision_shape.set_deferred("disabled", false)
+	sprite.play("default")
