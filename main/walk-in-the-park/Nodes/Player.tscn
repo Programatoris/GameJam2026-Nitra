@@ -201,8 +201,9 @@ sprite_frames = SubResource("SpriteFrames_23xfg")
 animation = &"death_animation"
 autoplay = "default"
 
-[node name="Death" type="AudioStreamPlayer" parent="." unique_id=981537234]
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=981537234 groups=["Effects"]]
 stream = ExtResource("5_hrew7")
 
-[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=860697704]
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=860697704 groups=["Effects"]]
 stream = ExtResource("6_s6v37")
+volume_db = 2.0

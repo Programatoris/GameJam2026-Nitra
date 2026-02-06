@@ -1,5 +1,9 @@
 extends Node2D
 
+
+@onready var collision_thump: AudioStreamPlayer = $CollisionThump
+
+
 func _ready() -> void:
 	var area = $Area2D
 	if area:
@@ -7,6 +11,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		collision_thump.play()
 		# Už nevoláme PhysicsServer, ale povieme hráčovi, aby sa otočil
 		if body.has_method("flip_visual"):
 			body.flip_visual()

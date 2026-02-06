@@ -6,14 +6,13 @@
 [ext_resource type="AudioStream" uid="uid://v3pffgrsfoe6" path="res://Audio/Music/pianoSomething.wav" id="2_an31d"]
 [ext_resource type="Texture2D" uid="uid://bn7dwh2mhsm5i" path="res://visuals/sprites/near-clouds.png" id="3_mfvi6"]
 [ext_resource type="Texture2D" uid="uid://cwmi1uuyt3ngp" path="res://visuals/sprites/city.png" id="4_vvhhx"]
-[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeUp.tscn" id="5_22qoi"]
+[ext_resource type="PackedScene" uid="uid://beesdonx4mp8" path="res://Nodes/FlyingSpikeUp.tscn" id="5_22qoi"]
 [ext_resource type="Texture2D" uid="uid://t7pikg10bcsi" path="res://visuals/sprites/tilemap_sprites.png" id="5_an31d"]
 [ext_resource type="PackedScene" path="res://Nodes/spike.tscn" id="8_3cg66"]
 [ext_resource type="PackedScene" path="res://Nodes/Apple.tscn" id="8_skof0"]
-[ext_resource type="PackedScene" path="res://Nodes/FlyingSpikeLeft.tscn" id="9_dvc4d"]
+[ext_resource type="PackedScene" uid="uid://dfh2wx0imbkgd" path="res://Nodes/FlyingSpikeLeft.tscn" id="9_dvc4d"]
 [ext_resource type="PackedScene" uid="uid://dih7yy7dft35k" path="res://Nodes/Player.tscn" id="9_w0rax"]
 [ext_resource type="PackedScene" path="res://Nodes/FakeFlag.tscn" id="11_mfvi6"]
-[ext_resource type="AudioStream" uid="uid://bml4pctcjdk60" path="res://Audio/SoundEffects/stoneSlide.mp3" id="12_0pe42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nsxd"]
 texture = ExtResource("5_an31d")
@@ -282,9 +281,6 @@ texture = ExtResource("4_vvhhx")
 [node name="FlyingSpikeUp" parent="TextureRect" unique_id=1393011176 instance=ExtResource("5_22qoi")]
 position = Vector2(-56, 232)
 
-[node name="StoneSlide" type="AudioStreamPlayer" parent="TextureRect/FlyingSpikeUp" unique_id=2079974645]
-stream = ExtResource("12_0pe42")
-
 [node name="TileMap" type="TileMap" parent="." unique_id=497307537]
 tile_set = SubResource("TileSet_tvyok")
 format = 2
@@ -317,9 +313,6 @@ position = Vector2(-24, 232)
 
 [node name="FlyingSpikeLeft" parent="." unique_id=1502386981 instance=ExtResource("9_dvc4d")]
 position = Vector2(344, 135)
-
-[node name="StoneSlide" type="AudioStreamPlayer" parent="FlyingSpikeLeft" unique_id=1071794487]
-stream = ExtResource("12_0pe42")
 
 [node name="Apple" parent="." unique_id=1593050298 instance=ExtResource("8_skof0")]
 position = Vector2(248, 172)

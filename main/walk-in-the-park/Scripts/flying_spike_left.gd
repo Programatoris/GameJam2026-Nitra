@@ -41,12 +41,14 @@ func _process(delta: float) -> void:
 
 func _on_detection_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		stone_slide.play()
+		if has_node("StoneSlide"):
+			stone_slide.play()
 		player = body
 
 func _on_detection_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		player = null
+		
 
 func _on_kill_entered(body: Node) -> void:
 	# Only kill if falling

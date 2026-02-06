@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://dh5qp1pfatk20"]
+[gd_scene format=3 uid="uid://db8l7bosc0p01"]
 
 [ext_resource type="Script" uid="uid://4ryuiyirxuir" path="res://Scripts/flipper.gd" id="1_34q2x"]
 [ext_resource type="Texture2D" uid="uid://c3gdpbx3tklrc" path="res://visuals/sprites/Sprite-0dd001.png" id="1_jggv8"]
+[ext_resource type="AudioStream" uid="uid://bfmvqqo1qk4oo" path="res://Audio/SoundEffects/collisionThump.wav" id="3_vpgf0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_34q2x"]
 radius = 8.0
@@ -16,3 +17,7 @@ texture = ExtResource("1_jggv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1116825724]
 shape = SubResource("CircleShape2D_34q2x")
+
+[node name="CollisionThump" type="AudioStreamPlayer" parent="." unique_id=1024289569 groups=["Effects"]]
+stream = ExtResource("3_vpgf0")
+volume_db = 24.0

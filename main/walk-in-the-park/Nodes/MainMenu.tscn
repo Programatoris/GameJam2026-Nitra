@@ -50,22 +50,11 @@ script = ExtResource("2_cdxh8")
 [node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/OptionsButton" unique_id=1339360230 groups=["Effects"]]
 stream = ExtResource("2_m8gkc")
 
-[node name="Credits" type="Button" parent="MainMenu" unique_id=1820414212]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Credits"
-flat = true
-script = ExtResource("2_cdxh8")
-
-[node name="ButtonHover" type="AudioStreamPlayer" parent="MainMenu/Credits" unique_id=2087374889 groups=["Effects"]]
-stream = ExtResource("2_m8gkc")
-
 [node name="QuitButton" type="Button" parent="MainMenu" unique_id=1641273468]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Quit Game"
+text = "Quit"
 flat = true
 script = ExtResource("2_cdxh8")
 
@@ -193,7 +182,6 @@ stream = ExtResource("2_m8gkc")
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MainMenu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="OptionsMenu/UiScaleSlider/SliderWithText/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="OptionsMenu/UiScaleSlider2/Button" to="." method="_on_button_pressed"]

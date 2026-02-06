@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hrgvfhhoubvi" path="res://Scripts/good_dog.gd" id="1_73ni7"]
 [ext_resource type="Texture2D" uid="uid://dh8js2mdce5gi" path="res://visuals/sprites/tilemap_sprites2.png" id="1_s64nl"]
+[ext_resource type="AudioStream" uid="uid://73krcwn8m4sr" path="res://Audio/SoundEffects/dogBark.wav" id="3_bkn58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s64nl"]
 atlas = ExtResource("1_s64nl")
@@ -63,3 +64,6 @@ sprite_frames = SubResource("SpriteFrames_43x5m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1331513461]
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_kw6pc")
+
+[node name="DogBark" type="AudioStreamPlayer" parent="." unique_id=513537470 groups=["Effects"]]
+stream = ExtResource("3_bkn58")
